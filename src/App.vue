@@ -16,7 +16,7 @@
 
         <div class="flex items-center gap-3 pr-5 border-r" style=" border-color: #FFC19E ">
             <i class="fas fa-phone"></i>
-            <router-link to="/">
+            <router-link to="/trackorder">
                 <span class="text-xs  cursor-pointer">Track Your Order</span>
             </router-link>
         </div>
@@ -116,7 +116,7 @@
                     
                     class="font-normal tracking-wider cursor-pointer text-bg-primary"
                 >
-                    <router-link :to='category.title'>{{category.title}}</router-link>
+                    <router-link :to="'/categories/' + category.title">{{category.title}}</router-link>
                 </span>
         </div>
     </div>

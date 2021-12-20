@@ -39,7 +39,7 @@ const routes = [
     component:CancelOrders
   },
   {
-    path: '/trackOrder',
+    path: '/trackorder',
     name: 'TrackOrder',
     component:TrackOrder
   },
