@@ -4,7 +4,7 @@
 
               <carousel class="mb-10" :autoplay="1000" :wrapAround="true" :items-to-show="1">
     <slide v-for="image in images" :key="image">
-      <img class="mx-10" style="
+      <img class="md:mx-10" style="
                                 height: 250px;
                                 width:100%;
                                 border-radius: 20px;

@@ -1,8 +1,8 @@
 <template>
   <div>
     <main class="mt-10">
-      <div class="flex justify-between mb-24 mx-p-w">
-        <div class="flex flex-col gap-12 w-60">
+      <div class="flex flex-col md:flex-row justify-between mx-10 mb-24 md:mx-p-w">
+        <div class="flex flex-col gap-12 w-full md:w-60">
           <div
             class="flex flex-col py-6 overflow-auto border gap-7 rounded-2xl"
             style="height: 242px; border-color: #c4c4c4"
@@ -478,7 +478,7 @@
           </div>
         </div>
 
-        <div class="w-full overflow-hidden" style="max-width: 78%">
+        <div class="w-full overflow-hidden md:w-9/12">
           <ImageSlider :pageName="all-categories" />
           <CategorizedProducts :categoryTitle="Laptop-Products" />
         </div>

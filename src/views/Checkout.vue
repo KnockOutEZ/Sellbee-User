@@ -1,13 +1,13 @@
 <template>
   <div>
-        <main class="flex mt-10 mb-7 gap-14 mx-p-w">
+        <main class="flex md:flex-nowrap flex-wrap mt-10 mb-7 gap-14 mx-p-w">
             <div class="flex flex-col flex-1 gap-3">
                 <span class="mb-3 font-semibold font-poppins" style=" font-size: 15px ">
                     Shipping Details
                 </span>
 
                 <!-- {/* input row */} -->
-                <div class="flex gap-7">
+                <div class="flex flex-col md:flex-row gap-7">
                     <div class="flex flex-col flex-1 gap-2">
                         <span class="font-normal font-lato" style=" font-size: 9px ">
                             First Name
