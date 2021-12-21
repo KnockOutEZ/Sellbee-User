@@ -1,6 +1,6 @@
 <template>
   <div>
-        <main class="flex mt-10 gap-14 mb-14 mx-p-w">
+        <main class="flex md:flex-nowrap flex-wrap mt-10 gap-14 mb-14 mx-5 md:mx-p-w">
             <div class="flex flex-col flex-1 gap-3">
                 <div
                     class="flex items-center py-4 pl-4 mb-3 border rounded-md pr-9"
@@ -35,7 +35,7 @@
                 <CartProduct />
             </div>
 
-            <div class="flex flex-col gap-5" style=" max-height: 247px ">
+            <div class="flex flex-col gap-5 mx-auto md:mx-0" style=" max-height: 247px ">
                 <div
                     style=" background-color: #FFF7F3; border-color: #A1E887 "
                     class="flex items-center w-64 gap-4 py-4 pl-5 border rounded-md cursor-pointer pr-7"

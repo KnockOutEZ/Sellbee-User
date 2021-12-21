@@ -1,8 +1,23 @@
 <template>
-      <carousel class="mt-10 mb-10" :autoplay="1000" :wrapAround="true" :items-to-show="1.2">
+      <carousel class="mt-10 mb-10 hidden md:block" :autoplay="1000" :wrapAround="true" :items-to-show="1.2">
     <slide v-for="image in images" :key="image">
       <img class="mx-10" style="
                                 height: 350px;
+                                width:100%;
+                                border-radius: 20px;
+                            " :src="image" alt="">
+    </slide>
+
+    <!-- <template #addons>
+      <navigation />
+      <pagination />
+    </template> -->
+  </carousel>
+
+        <carousel class="mt-10 mb-10 md:hidden" :autoplay="1000" :wrapAround="true" :items-to-show="1">
+    <slide v-for="image in images" :key="image">
+      <img class="" style="
+                                height: 150px;
                                 width:100%;
                                 border-radius: 20px;
                             " :src="image" alt="">

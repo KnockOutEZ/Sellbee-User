@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between mb-24 mx-p-w px-p-w">
+  <div class="flex justify-between mb-24 md:mx-p-w px-2 md:px-p-w">
                 <div v-for="offering in offerings" :key="offering.title" class="flex flex-col items-center">
                     <img :src="offering.icon" :alt="offering.title" />
 

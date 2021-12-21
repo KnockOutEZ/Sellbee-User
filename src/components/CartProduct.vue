@@ -14,7 +14,7 @@
         </span>
 
         <div class="flex flex-col flex-1 h-full">
-            <div class="flex justify-between flex-1">
+            <div class="flex flex-col md:flex-row justify-between flex-1">
                 <span class="font-semibold font-poppins" style=" font-size: 10px ">
                     LED Monitor With High Quality In The World
                 </span>
@@ -27,14 +27,14 @@
             </div>
             <div>
                 <span class="text-xs font-semibold font-poppins text-bg-primary">976.33</span>
-                <div class="flex items-end justify-between">
+                <div class="flex flex-col md:flex-row items-start md:items-end justify-between">
                     <span
                         style=" color: #AEAEAE; font-size: 8px "
                         class="font-semibold tracking-wide font-poppins"
                     >
                         +Add note
                     </span>
-                    <div class="flex items-center gap-8">
+                    <div class="flex flex-wrap md:flex-nowrap items-center gap-3 md:gap-8">
                         <div
                             class="flex items-center gap-10 px-3 border rounded-md h-9"
                             style=" border-color: #D8D8D8 "

@@ -5,7 +5,7 @@
             </div>
 
             <div
-                class="grid grid-cols-6 gap-4"
+                class="md:grid grid-cols-6 gap-4"
             >
                     <Product
                     v-for="product in products" :key="product.id"

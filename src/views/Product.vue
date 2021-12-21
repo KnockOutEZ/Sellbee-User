@@ -23,11 +23,23 @@
                 </div>
 
                 <!-- {/* single product details */} -->
-                <div class="flex mb-20 mx-p-w gap-14">
+                <div class="flex md:flex-nowrap flex-wrap mb-20 mx-5 md:mx-p-w gap-14">
                     <div class="flex flex-col" style=" width: 400px ">
                         <!-- {/* <div style={{ height: 266 }}> */} -->
                         <div>
-                          <carousel :autoplay="1000" :wrapAround="true" :items-to-show="1.2">
+                          <carousel class="hidden md:block mb-2" :autoplay="1000" :wrapAround="true" :items-to-show="1.2">
+    <slide v-for="image in images" :key="image">
+      <img class="object-cover w-full h-72" :src="image" :alt="singleProduct">
+    </slide>
+
+    <!-- <template #addons>
+      <navigation />
+      <pagination />
+    </template> -->
+  </carousel>
+
+
+  <carousel class="md:hidden mb-2" :autoplay="1000" :wrapAround="true" :items-to-show="1">
     <slide v-for="image in images" :key="image">
       <img class="object-cover w-full h-72" :src="image" :alt="singleProduct">
     </slide>
@@ -84,7 +96,7 @@
                             Premium Teeshirt Best High Quality
                         </span>
 
-                        <div class="flex items-center mt-4 mb-8">
+                        <div class="flex flex-col md:flex-row items-start md:space-y-0 space-y-3 mt-4 mb-8">
                             <div class="flex items-center">
                                 <span
                                     class="mr-2 font-black font-lato"
@@ -106,7 +118,7 @@
                             </div>
 
                             <div
-                                class="flex items-center gap-1 px-2 mx-2 border border-t-0 border-b-0"
+                                class="flex items-center gap-1 md:px-2 md:mx-2 md:border border-t-0 border-b-0"
                                 style=" border-color: #F2F2F2 "
                             >
                                 <img src="/tick-icon.svg" alt="icon" />
@@ -151,14 +163,14 @@
                             </div>
                         </div>
 
-                        <div class="flex items-center">
+                        <div class="flex flex-col md:flex-row space-y-3 md:space-y-0 items-start md:items-center">
                             <span
                                 class="text-lg font-semibold uppercase font-poppins"
                                 style=" color: #A1E887 "
                             >
                                 bdt 100
                             </span>
-                            <div class="flex flex-1 gap-2 ml-3">
+                            <div class="flex flex-1 gap-2 md:ml-3">
                                 <span
                                     class="line-through uppercase"
                                     style=" color: #8D8D8D; font-size: 10px "
@@ -198,10 +210,10 @@
                             </div>
                         </div>
 
-                        <div class="flex items-center justify-between mb-10">
-                            <span class="text-sm font-bold font-lato">Screen Size</span>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-10">
+                            <span class="text-sm font-bold font-lato mb-2 md:mb-0">Screen Size</span>
 
-                            <div class="flex gap-3">
+                            <div class="flex flex-col md:flex-row gap-3">
                                 <span
                                     class="flex items-center justify-center px-5 font-bold border rounded-md cursor-pointer h-9 font-lato"
                                     style="
@@ -244,9 +256,9 @@
                             </div>
                         </div>
 
-                        <div class="flex justify-between">
+                        <div class="flex flex-wrap md:flex-nowrap justify-between">
                             <div
-                                class="flex items-center gap-10 px-3 border rounded-md h-9"
+                                class="flex md:mx-0 mx-auto items-center gap-10 px-3 border rounded-md h-9"
                                 style=" border-color: #D8D8D8 "
                             >
                                 <span class="cursor-pointer">
@@ -289,7 +301,7 @@
                                 </span>
                             </div>
 
-                            <div class="flex gap-2">
+                            <div class="flex md:mx-0 mt-2 md:mt-0 mx-auto gap-2">
                                 <span
                                     class="flex items-center font-bold uppercase border rounded-md cursor-pointer px-9 h-9 text-bg-primary font-lato"
                                     style=" border-color: #D8D8D8; font-size: 10px "
@@ -308,7 +320,7 @@
                 </div>
 
                 <!-- {/* single product review */} -->
-                <div class="flex justify-between mb-20 mx-p-w">
+                <div class="flex flex-col md:flex-row justify-between mb-20 mx-5 md:mx-p-w">
                     <div
                         class="flex flex-col items-center px-6 py-10 text-white rounded-md bg-bg-primary"
                         style=" max-height: 478px "
@@ -403,7 +415,7 @@
                     <div class="flex-1" style=" max-width: 950px ">
                         <div
                             style=" background-color: #F9F9F9; height: 49px "
-                            class="flex items-center gap-16 px-10 rounded-md"
+                            class="flex md:overflow-none overflow-auto items-center gap-16 px-10 rounded-md"
                         >
                             <span
                                 class="relative flex items-center h-full text-xs font-semibold font-poppins"
