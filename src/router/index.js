@@ -6,6 +6,7 @@ import Checkout from '../views/Checkout.vue'
 import Category from '../views/Category.vue'
 import CancelOrders from '../views/CancelOrders.vue'
 import TrackOrder from '../views/TrackOrder.vue'
+import OrderConfirm from '../views/OrderConfirm.vue'
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
     path: '/trackorder',
     name: 'TrackOrder',
     component:TrackOrder
+  },
+  {
+    path: '/orderconfirm',
+    name: 'OrderConfirm',
+    component:OrderConfirm
   },
 ]
 

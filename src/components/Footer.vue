@@ -1,6 +1,6 @@
 <template>
         <div
-        class="flex items-center gap-12 py-10 px-p-w"
+        class="flex flex-wrap items-center gap-12 py-10 px-p-w"
         style=" background-image: linear-gradient(223deg, #6a8d92, #493548) "
     >
         <svg xmlns="http://www.w3.org/2000/svg" width="58" height="51" viewBox="0 0 58 51">
@@ -58,8 +58,8 @@
         </div>
     </div>
 
-        <div class="relative flex justify-between py-20 px-p-w bg-bg-primary font-lato">
-            <div class="absolute bottom-0 left-0">
+        <div class="relative flex flex-wrap space-y-5 justify-between py-20 px-p-w bg-bg-primary font-lato">
+            <div class="absolute bottom-0 left-0 hidden md:block">
                 <img src="/footer-styled-bg.svg" alt="svg-design" />
             </div>
             <div class="z-10 flex flex-col">
@@ -215,7 +215,7 @@
                 <span class="text-xs font-light text-gray-300">My Cart</span>
             </div>
 
-            <div class="flex flex-col gap-5" style=" max-width: 310px ">
+            <div class="flex flex-wrap flex-col gap-5" style=" max-width: 310px ">
                 <span class="mb-2 text-sm font-bold tracking-wide text-white uppercase">
                     contact
                 </span>
@@ -239,7 +239,7 @@
                         />
                     </svg>
 
-                    <div class="flex flex-col justify-between">
+                    <div class="flex flex-wrap flex-col justify-between">
                         <span style=" font-size: 10 " class="tracking-wide text-white">
                             Have any question?
                         </span>
@@ -253,7 +253,7 @@
                         live chat
                     </button>
                 </div>
-                <div class="flex justify-between">
+                <div class="flex md:space-y-0 space-y-5 flex-wrap justify-between">
                     <button
                         type="button"
                         class="flex items-center gap-4 py-2 pl-3 pr-10 rounded-md"
@@ -273,7 +273,7 @@
                             />
                         </svg>
 
-                        <div class="flex flex-col gap-1">
+                        <div class="flex flex-col flex-wrap gap-1">
                             <span class="text-white" style=" font-size: 6px ">
                                 Download on this
                             </span>
