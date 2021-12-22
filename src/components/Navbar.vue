@@ -11,12 +11,12 @@
         </div>
 
         <div class="flex items-center flex-1 gap-3">
-            <i class="fas fa-phone"></i>
+            <i class="fas fa-envelope"></i>
             <span class="text-xs">support@sellbee.com</span>
         </div>
 
         <div class="flex items-center gap-3 pr-5 border-r" style=" border-color: #FFC19E ">
-            <i class="fas fa-phone"></i>
+            <i class="fas fa-truck"></i>
             <router-link to="/trackorder">
                 <span class="text-xs  cursor-pointer">Track Your Order</span>
             </router-link>
@@ -86,10 +86,21 @@
                 </div>
             </div>
 
-            <i class="fas fa-phone"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.001" viewBox="0 0 12 12.001">
+  <path id="iconMenu" d="M682.576,70h-3.692a.924.924,0,0,1-.923-.923V65.384a.924.924,0,0,1,.923-.923h3.692a.924.924,0,0,1,.923.923v3.693A.924.924,0,0,1,682.576,70Zm-3.7-4.621v3.69h3.69V65.38ZM676.115,70h-3.692a.924.924,0,0,1-.923-.923V65.384a.924.924,0,0,1,.923-.923h3.692a.924.924,0,0,1,.923.923v3.693A.924.924,0,0,1,676.115,70Zm-3.7-4.621v3.69h3.69V65.38Zm10.156-1.841h-3.692a.924.924,0,0,1-.923-.923V58.923a.924.924,0,0,1,.923-.923h3.692a.924.924,0,0,1,.923.923v3.693A.924.924,0,0,1,682.576,63.538Zm-3.7-4.618v3.69h3.69V58.92Zm-2.765,4.618h-3.692a.924.924,0,0,1-.923-.923V58.923a.924.924,0,0,1,.923-.923h3.692a.924.924,0,0,1,.923.923v3.693A.924.924,0,0,1,676.115,63.538Zm-3.7-4.618v3.69h3.69V58.92Z" transform="translate(-671.5 -58)" fill="#4c4c4c"/>
+</svg>
+
 
             <router-link to="/">
-            <i class="fas fa-phone"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="11.917" height="10.292" viewBox="0 0 11.917 10.292">
+  <g id="basket" transform="translate(-712.542 -58.354)">
+    <path id="Vector" d="M721.75,68.646h-6.5a1.615,1.615,0,0,1-1.149-.476,1.636,1.636,0,0,1-.476-1.148V62.688h-.541a.542.542,0,1,1,0-1.084h1.335l2.006-3.009a.541.541,0,0,1,.345-.23.542.542,0,0,1,.637.425.545.545,0,0,1-.081.407l-1.6,2.407h5.559l-1.6-2.407a.542.542,0,0,1,.149-.751.543.543,0,0,1,.751.15l2,3.009h1.336a.541.541,0,0,1,.382.924.545.545,0,0,1-.382.159h-.542v4.333a1.636,1.636,0,0,1-.476,1.148A1.615,1.615,0,0,1,721.75,68.646Zm-7.042-5.958v4.333a.541.541,0,0,0,.542.541h6.5a.541.541,0,0,0,.542-.541V62.688Z" fill="#4c4c4c"/>
+    <path id="Vector-2" data-name="Vector" d="M716.333,66.75a.542.542,0,0,0,.542-.542V64.041a.542.542,0,0,0-1.083,0v2.167a.542.542,0,0,0,.542.542Z" fill="#4c4c4c"/>
+    <path id="Vector-3" data-name="Vector" d="M718.5,66.75a.542.542,0,0,0,.542-.542V64.041a.542.542,0,0,0-1.083,0v2.167a.542.542,0,0,0,.542.542Z" fill="#4c4c4c"/>
+    <path id="Vector-4" data-name="Vector" d="M720.667,66.75a.542.542,0,0,0,.542-.542V64.041a.542.542,0,0,0-1.084,0v2.167a.542.542,0,0,0,.542.542Z" fill="#4c4c4c"/>
+  </g>
+</svg>
+
             </router-link>
 
             <div
@@ -99,7 +110,7 @@
                     height: 35px;
                 "
             >
-            <i class="fas fa-phone"></i>
+            <i class="fas fa-user"></i>
                 <span style=" fontSize: 9 ">MY ACCOUNT</span>
             </div>
         </div>
@@ -161,14 +172,14 @@
 
     <div class="flex ml-auto flex-1 gap-3">
         <span class="text-xs">support@sellbee.com</span>
-        <i class="fas fa-phone"></i>
+        <i class="fas fa-envelope"></i>
     </div>
 
     <div class="flex ml-auto gap-3">
         <router-link to="/trackorder">
             <span class="text-xs  cursor-pointer">Track Your Order</span>
         </router-link>
-        <i class="fas fa-phone"></i>
+        <i class="fas fa-truck"></i>
     </div>
 
     <div class="flex ml-auto gap-3">
@@ -228,7 +239,7 @@
                         height: 35px;
                     "
                 >
-                <i class="fas fa-phone"></i>
+                <i class="fas fa-user"></i>
                     <span style=" font-size: 9px ">MY ACCOUNT</span>
                 </div>
 
@@ -263,10 +274,20 @@
                     </div>
                 </div>
     
-                <i class="fas fa-phone mr-2"></i>
+                <svg class="mx-2" xmlns="http://www.w3.org/2000/svg" width="12" height="12.001" viewBox="0 0 12 12.001">
+  <path id="iconMenu" d="M682.576,70h-3.692a.924.924,0,0,1-.923-.923V65.384a.924.924,0,0,1,.923-.923h3.692a.924.924,0,0,1,.923.923v3.693A.924.924,0,0,1,682.576,70Zm-3.7-4.621v3.69h3.69V65.38ZM676.115,70h-3.692a.924.924,0,0,1-.923-.923V65.384a.924.924,0,0,1,.923-.923h3.692a.924.924,0,0,1,.923.923v3.693A.924.924,0,0,1,676.115,70Zm-3.7-4.621v3.69h3.69V65.38Zm10.156-1.841h-3.692a.924.924,0,0,1-.923-.923V58.923a.924.924,0,0,1,.923-.923h3.692a.924.924,0,0,1,.923.923v3.693A.924.924,0,0,1,682.576,63.538Zm-3.7-4.618v3.69h3.69V58.92Zm-2.765,4.618h-3.692a.924.924,0,0,1-.923-.923V58.923a.924.924,0,0,1,.923-.923h3.692a.924.924,0,0,1,.923.923v3.693A.924.924,0,0,1,676.115,63.538Zm-3.7-4.618v3.69h3.69V58.92Z" transform="translate(-671.5 -58)" fill="#4c4c4c"/>
+</svg>
     
                 <router-link to="/">
-                <i class="fas fa-phone"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="11.917" height="10.292" viewBox="0 0 11.917 10.292">
+  <g id="basket" transform="translate(-712.542 -58.354)">
+    <path id="Vector" d="M721.75,68.646h-6.5a1.615,1.615,0,0,1-1.149-.476,1.636,1.636,0,0,1-.476-1.148V62.688h-.541a.542.542,0,1,1,0-1.084h1.335l2.006-3.009a.541.541,0,0,1,.345-.23.542.542,0,0,1,.637.425.545.545,0,0,1-.081.407l-1.6,2.407h5.559l-1.6-2.407a.542.542,0,0,1,.149-.751.543.543,0,0,1,.751.15l2,3.009h1.336a.541.541,0,0,1,.382.924.545.545,0,0,1-.382.159h-.542v4.333a1.636,1.636,0,0,1-.476,1.148A1.615,1.615,0,0,1,721.75,68.646Zm-7.042-5.958v4.333a.541.541,0,0,0,.542.541h6.5a.541.541,0,0,0,.542-.541V62.688Z" fill="#4c4c4c"/>
+    <path id="Vector-2" data-name="Vector" d="M716.333,66.75a.542.542,0,0,0,.542-.542V64.041a.542.542,0,0,0-1.083,0v2.167a.542.542,0,0,0,.542.542Z" fill="#4c4c4c"/>
+    <path id="Vector-3" data-name="Vector" d="M718.5,66.75a.542.542,0,0,0,.542-.542V64.041a.542.542,0,0,0-1.083,0v2.167a.542.542,0,0,0,.542.542Z" fill="#4c4c4c"/>
+    <path id="Vector-4" data-name="Vector" d="M720.667,66.75a.542.542,0,0,0,.542-.542V64.041a.542.542,0,0,0-1.084,0v2.167a.542.542,0,0,0,.542.542Z" fill="#4c4c4c"/>
+  </g>
+</svg>
+
                 </router-link>
             </div>
             

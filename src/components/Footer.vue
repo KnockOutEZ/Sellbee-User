@@ -322,9 +322,9 @@
 
         <div class="flex items-center gap-3">
             <span class="mr-2 text-xs">Payment</span>
-            <i class="fas fa-phone"></i>
-            <i class="fas fa-phone"></i>
-            <i class="fas fa-phone"></i>
+            <img width="20" src="/BKash-Logo.wine.svg" alt="">
+            <img width="20" src="/Nagad-Logo.wine.svg" alt="">
+            <img width="20" src="/184568.svg" alt="">
         </div>
     </div>
         </template>
