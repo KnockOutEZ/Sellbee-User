@@ -4,23 +4,23 @@
             style=" background-image: linear-gradient(244deg, #4b4e6d 75%, #4b4e6d 0%) "
         >
             <span
-                class="mt-8 text-lg font-bold tracking-wide text-white font-poppins"
-                style=" max-width: 120px "
+                class="mt-8 text-xl font-bold tracking-wide text-white font-poppins"
+                style=" "
             >
                 Top 10 Selected Products On the Week
             </span>
+            <div class="w-full hidden md:block" style=" max-width: 80% ">
 
-            <div class="w-full hidden md:block" style=" max-width: 70% ">
-                <carousel class="mt-10 mb-10" :autoplay="1000" :wrapAround="true" :items-to-show="4">
-                        <slide v-for="product in products" :key="product.id">
-                            <div class="w-48">
+                <carousel :autoplay="5000" class="mt-10 mb-10"  :wrapAround="true" :items-to-show="5">
+                        <slide v-for="product in products"  :key="product.id">
+                            <div>
                                 <div
         class="flex flex-col
             description starCount items-center
-        bg-white gap-4 pb-4 rounded-2xl"
+        bg-white pb-4 rounded-2xl"
         style=" box-shadow: '0px 3px 3px 0 rgba(0, 0, 0, 0.06)' "
     >
-        <router-link :to="{ path: '/product/' + product.id}">
+        <router-link class=" w-full" :to="{ path: '/product/' + product.id}">
             <img
                 :src="product.image"
                 :alt="product.name"
@@ -29,30 +29,30 @@
             />
         </router-link>
 
+        <span class="font-normal font-poppins text-left w-full px-3" style=" font-size: 20px; ">
+                {{product.name}}
+            </span>
+
+            <span class="font-light text-gray-500 font-poppins w-full text-left px-3" style=" font-size: 12px ">
+                    {{product.description}}
+                </span>
+
         <!-- {description && starCount ? null : ( -->
-            <div class="flex flex-col items-center gap-1 font-poppins">
+            <!-- <div class="flex flex-col items-center gap-1 font-poppins">
                 <span class="text-sm font-semibold text-bg-primary">BDT {{product.newPrice}}</span>
                 <span style=" color: #8D8D8D " class="text-xs font-normal">
                     BDT {{product.oldPrice}}
                 </span>
-            </div>
+            </div> -->
         <!-- )} -->
 
         <!-- {description && starCount ? ( -->
-            <div class="flex flex-col gap-1 px-4">
-                <span class="font-semibold font-poppins">{{product.name}}</span>
-                <span class="font-medium font-poppins" style=" font-size: 9px ">
-                    {{product.description}}
-                </span>
-            </div>
+            
         <!-- ) : ( -->
-            <span class="font-semibold font-poppins" style=" font-size: 13px; max-width: 124px ">
-                {{product.name}}
-            </span>
         <!-- )} -->
 
-            <div class="flex px-4">
-                <span class="text-sm font-semibold text-bg-primary">BDT {{product.newPrice}}</span>
+            <div class="flex px-3 w-full text-left">
+                <span class=" font-normal text-bg-primary" style="font-size:16px">BDT {{product.newPrice}}</span>
                 <span
                     style=" color: #8D8D8D "
                     class="self-center flex-1 ml-2 text-xs font-normal"
@@ -60,10 +60,7 @@
                     BDT {{product.oldPrice}}
                 </span>
                 <div class="flex items-center">
-                    <!-- {[...Array(starCount)].map((c, i) => ( -->
-                        <!-- // eslint-disable-next-line react/no-array-index-key -->
-                        <!-- :key="product.id" -->
-                        <span  style=" margin-right: 10px ">
+                        <span v-for="n in product.starCount" :key="n"  style=" margin-right: 2px ">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="7.464"
@@ -77,14 +74,13 @@
                                 />
                             </svg>
                         </span>
-                    <!-- ))} -->
                 </div>
             </div>
         <!-- ) : null} -->
 
         <!-- {stock ? (
             <> -->
-                <div class="flex flex-col items-center gap-1">
+                <!-- <div class="flex flex-col items-center gap-1">
                     <div
                         style="
                             height: 5px;
@@ -102,14 +98,14 @@
                     <span style= "color: #8D8D8D" class="text-xs font-light font-lato">
                          Left Stock
                     </span>
-                </div>
+                </div> -->
 
-                <button
+                <!-- <button
                     type="button"
                     class="w-32 py-2 text-xs font-light tracking-wide text-center border rounded-md border-bg-primary text-bg-primary"
                 >
                     Add to cart
-                </button>
+                </button> -->
             <!-- </> -->
         <!-- ) : null} -->
     </div>
@@ -138,16 +134,16 @@
 
 
             <div class="w-full md:hidden" style=" max-width: 100% ">
-                <carousel class="mt-10 mb-10" :autoplay="1000" :wrapAround="true" :items-to-show="1">
+                <carousel class="mt-10 mb-10" :autoplay="5000" :wrapAround="true" :items-to-show="1">
                         <slide v-for="product in products" :key="product.id">
                             <div class="w-48">
                                 <div
         class="flex flex-col
             description starCount items-center
-        bg-white gap-4 pb-4 rounded-2xl"
+        bg-white pb-4 rounded-2xl"
         style=" box-shadow: '0px 3px 3px 0 rgba(0, 0, 0, 0.06)' "
     >
-        <router-link :to="{ path: '/product/' + product.id}">
+        <router-link class=" w-full" :to="{ path: '/product/' + product.id}">
             <img
                 :src="product.image"
                 :alt="product.name"
@@ -156,30 +152,30 @@
             />
         </router-link>
 
+        <span class="font-normal font-poppins text-left w-full px-3" style=" font-size: 20px; ">
+                {{product.name}}
+            </span>
+
+            <span class="font-light text-gray-500 font-poppins w-full text-left px-3" style=" font-size: 12px ">
+                    {{product.description}}
+                </span>
+
         <!-- {description && starCount ? null : ( -->
-            <div class="flex flex-col items-center gap-1 font-poppins">
+            <!-- <div class="flex flex-col items-center gap-1 font-poppins">
                 <span class="text-sm font-semibold text-bg-primary">BDT {{product.newPrice}}</span>
                 <span style=" color: #8D8D8D " class="text-xs font-normal">
                     BDT {{product.oldPrice}}
                 </span>
-            </div>
+            </div> -->
         <!-- )} -->
 
         <!-- {description && starCount ? ( -->
-            <div class="flex flex-col gap-1 px-4">
-                <span class="font-semibold font-poppins">{{product.name}}</span>
-                <span class="font-medium font-poppins" style=" font-size: 9px ">
-                    {{product.description}}
-                </span>
-            </div>
+            
         <!-- ) : ( -->
-            <span class="font-semibold font-poppins" style=" font-size: 13px; max-width: 124px ">
-                {{product.name}}
-            </span>
         <!-- )} -->
 
-            <div class="flex px-4">
-                <span class="text-sm font-semibold text-bg-primary">BDT {{product.newPrice}}</span>
+            <div class="flex px-3 w-full text-left">
+                <span class=" font-normal text-bg-primary" style="font-size:16px">BDT {{product.newPrice}}</span>
                 <span
                     style=" color: #8D8D8D "
                     class="self-center flex-1 ml-2 text-xs font-normal"
@@ -187,10 +183,7 @@
                     BDT {{product.oldPrice}}
                 </span>
                 <div class="flex items-center">
-                    <!-- {[...Array(starCount)].map((c, i) => ( -->
-                        <!-- // eslint-disable-next-line react/no-array-index-key -->
-                        <!-- :key="product.id" -->
-                        <span  style=" margin-right: 10px ">
+                        <span v-for="n in product.starCount" :key="n"  style=" margin-right: 2px ">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="7.464"
@@ -204,14 +197,13 @@
                                 />
                             </svg>
                         </span>
-                    <!-- ))} -->
                 </div>
             </div>
         <!-- ) : null} -->
 
         <!-- {stock ? (
             <> -->
-                <div class="flex flex-col items-center gap-1">
+                <!-- <div class="flex flex-col items-center gap-1">
                     <div
                         style="
                             height: 5px;
@@ -229,14 +221,14 @@
                     <span style= "color: #8D8D8D" class="text-xs font-light font-lato">
                          Left Stock
                     </span>
-                </div>
+                </div> -->
 
-                <button
+                <!-- <button
                     type="button"
                     class="w-32 py-2 text-xs font-light tracking-wide text-center border rounded-md border-bg-primary text-bg-primary"
                 >
                     Add to cart
-                </button>
+                </button> -->
             <!-- </> -->
         <!-- ) : null} -->
     </div>

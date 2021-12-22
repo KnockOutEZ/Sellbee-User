@@ -32,6 +32,7 @@
                         :newPrice="product.newPrice"
                         :image="product.image"
                         :stock="product.stock"
+                        :showEmAll = "true"
                     />
             </div>
         </div>
@@ -92,7 +93,7 @@ data(){
             name: 'test 5',
             oldPrice: 100,
             newPrice: 50,
-            stock: 100,
+            stock: 900,
             image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {

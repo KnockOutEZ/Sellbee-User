@@ -21,7 +21,7 @@
             <div class="flex flex-col justify-between w-full hidden md:block" style=" max-width: 70% ">
                 <carousel
                     class="w-full"
-                    :autoplay="1000" :wrapAround="true" :items-to-show="3"
+                    :autoplay="5000" :wrapAround="true" :items-to-show="3"
                 >
                         <slide v-for="slide in slides" :key="slide.id" class="mx-2">
                             <div class="flex w-64 gap-3 py-2 pl-2 bg-white rounded-xl font-poppins">
@@ -35,8 +35,8 @@
 
                                 <div class="flex flex-col justify-between pb-2">
                                     <span
-                                        class="font-medium tracking-wide"
-                                        style=" font-size: 10px "
+                                        class="font-normal w-full text-left tracking-wide"
+                                        style=" font-size: 16px "
                                     >
                                         {{slide.name}}
                                     </span>
@@ -85,7 +85,7 @@
             <div class="flex flex-col justify-between w-full md:hidden" style=" max-width: 100% ">
                 <carousel
                     class="w-full"
-                    :autoplay="1000" :wrapAround="true" :items-to-show="1"
+                    :autoplay="5000" :wrapAround="true" :items-to-show="1"
                 >
                         <slide v-for="slide in slides" :key="slide.id">
                             <div class="flex w-64 gap-3 py-2 pl-2 bg-white rounded-xl font-poppins">
@@ -99,8 +99,8 @@
 
                                 <div class="flex flex-col justify-between pb-2">
                                     <span
-                                        class="font-medium tracking-wide"
-                                        style=" font-size: 10px "
+                                        class="font-normal w-full text-left tracking-wide"
+                                        style=" font-size: 16px "
                                     >
                                         {{slide.name}}
                                     </span>

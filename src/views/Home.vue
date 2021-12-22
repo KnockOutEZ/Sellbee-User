@@ -11,6 +11,10 @@ export default {
   name: 'Home',
   components: {
     FirstPage
+  },
+
+  created() {
+    this.$store.dispatch("initApp");
   }
 }
 </script>

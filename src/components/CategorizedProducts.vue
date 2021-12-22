@@ -50,7 +50,7 @@
             </div>
 
             <div
-                class="md:grid grid-cols-4 gap-4"
+                class="md:grid grid-cols-4 gap-4 px-p-w"
             >
                     <Product v-for="product in products"
                         :key="product.id"
