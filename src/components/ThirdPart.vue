@@ -12,7 +12,7 @@
             <div class="w-full hidden md:block" style=" max-width: 80% ">
 
                 <carousel :autoplay="5000" class="mt-10 mb-10"  :wrapAround="true" :items-to-show="5">
-                        <slide v-for="product in products"  :key="product.id">
+                        <slide v-for="product in products" class="mx-3"  :key="product.id">
                             <div>
                                 <div
         class="flex flex-col
@@ -33,15 +33,15 @@
                 {{product.name}}
             </span>
 
-            <span class="font-light text-gray-500 font-poppins w-full text-left px-3" style=" font-size: 12px ">
-                    {{product.description}}
+            <span class="font-light text-gray-500 font-poppins w-full text-left px-3 two-line-ellipsis" v-html="product.description" style=" font-size: 12px; ">
+                    
                 </span>
 
         <!-- {description && starCount ? null : ( -->
             <!-- <div class="flex flex-col items-center gap-1 font-poppins">
-                <span class="text-sm font-semibold text-bg-primary">BDT {{product.newPrice}}</span>
+                <span class="text-sm font-semibold text-bg-primary">BDT {{product.salesPrice}}</span>
                 <span style=" color: #8D8D8D " class="text-xs font-normal">
-                    BDT {{product.oldPrice}}
+                    BDT {{product.regularPrice}}
                 </span>
             </div> -->
         <!-- )} -->
@@ -52,12 +52,12 @@
         <!-- )} -->
 
             <div class="flex px-3 w-full text-left">
-                <span class=" font-normal text-bg-primary" style="font-size:16px">BDT {{product.newPrice}}</span>
+                <span class=" font-normal text-bg-primary" style="font-size:16px">BDT {{product.salesPrice}}</span>
                 <span
                     style=" color: #8D8D8D "
                     class="self-center flex-1 ml-2 text-xs font-normal"
                 >
-                    BDT {{product.oldPrice}}
+                    BDT {{product.regularPrice}}
                 </span>
                 <div class="flex items-center">
                         <span v-for="n in product.starCount" :key="n"  style=" margin-right: 2px ">
@@ -111,8 +111,8 @@
     </div>
                                 <!-- <Product
                                     name={product.name}
-                                    oldPrice={product.oldPrice}
-                                    newPrice={product.newPrice}
+                                    regularPrice={product.regularPrice}
+                                    salesPrice={product.salesPrice}
                                     image={product.image}
                                     description={product.description}
                                     starCount={product.starCount}
@@ -156,15 +156,15 @@
                 {{product.name}}
             </span>
 
-            <span class="font-light text-gray-500 font-poppins w-full text-left px-3" style=" font-size: 12px ">
+            <span class="font-light text-gray-500 font-poppins w-full text-left px-3 two-line-ellipsis" style=" font-size: 12px;">
                     {{product.description}}
                 </span>
 
         <!-- {description && starCount ? null : ( -->
             <!-- <div class="flex flex-col items-center gap-1 font-poppins">
-                <span class="text-sm font-semibold text-bg-primary">BDT {{product.newPrice}}</span>
+                <span class="text-sm font-semibold text-bg-primary">BDT {{product.salesPrice}}</span>
                 <span style=" color: #8D8D8D " class="text-xs font-normal">
-                    BDT {{product.oldPrice}}
+                    BDT {{product.regularPrice}}
                 </span>
             </div> -->
         <!-- )} -->
@@ -175,12 +175,12 @@
         <!-- )} -->
 
             <div class="flex px-3 w-full text-left">
-                <span class=" font-normal text-bg-primary" style="font-size:16px">BDT {{product.newPrice}}</span>
+                <span class=" font-normal text-bg-primary" style="font-size:16px">BDT {{product.salesPrice}}</span>
                 <span
                     style=" color: #8D8D8D "
                     class="self-center flex-1 ml-2 text-xs font-normal"
                 >
-                    BDT {{product.oldPrice}}
+                    BDT {{product.regularPrice}}
                 </span>
                 <div class="flex items-center">
                         <span v-for="n in product.starCount" :key="n"  style=" margin-right: 2px ">
@@ -234,8 +234,8 @@
     </div>
                                 <!-- <Product
                                     name={product.name}
-                                    oldPrice={product.oldPrice}
-                                    newPrice={product.newPrice}
+                                    regularPrice={product.regularPrice}
+                                    salesPrice={product.salesPrice}
                                     image={product.image}
                                     description={product.description}
                                     starCount={product.starCount}
@@ -259,75 +259,31 @@ export default {
 data(){
     return{
         products : [
-        {
+         {
             id: 1,
             name: 'test 1',
-            oldPrice: 100,
-            newPrice: 50,
+            regularPrice: 100,
+            salesPrice: 50,
             description: '4.3m solid',
             starCount: 4,
             image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 2,
-            name: 'test 2',
-            oldPrice: 100,
-            newPrice: 50,
-            description: '4.3m solid',
-            starCount: 4,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 3,
-            name: 'test 3',
-            oldPrice: 100,
-            newPrice: 50,
-            description: '4.3m solid',
-            starCount: 4,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 4,
-            name: 'test 4',
-            oldPrice: 100,
-            newPrice: 50,
-            description: '4.3m solid',
-            starCount: 4,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 5,
-            name: 'test 5',
-            oldPrice: 100,
-            newPrice: 50,
-            description: '4.3m solid',
-            starCount: 4,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 6,
-            name: 'test 6',
-            oldPrice: 100,
-            newPrice: 50,
-            description: '4.3m solid',
-            starCount: 4,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 7,
-            name: 'test 7',
-            oldPrice: 100,
-            newPrice: 50,
-            description: '4.3m solid',
-            starCount: 4,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
+        }, 
     ]
     }
-}
+},
+created() {
+    this.products = this.$store.state.products.data
+  },
 }
 </script>
 
 <style>
-
+ .two-line-ellipsis {
+           word-break: break-word;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 1; /* number of lines to show */
+   -webkit-box-orient: vertical;
+    }
 </style>

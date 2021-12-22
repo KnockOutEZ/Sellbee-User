@@ -15,9 +15,9 @@
         </router-link>
 
             <!-- <div v-if="description !== null && starCount!== null" class="flex flex-col items-center gap-1 font-poppins">
-                <span class="text-sm font-semibold text-bg-primary">BDT {{newPrice}}</span>
+                <span class="text-sm font-semibold text-bg-primary">BDT {{salesPrice}}</span>
                 <span style=" color: #8D8D8D " class="text-xs font-normal">
-                    BDT {{oldPrice}}
+                    BDT {{regularPrice}}
                 </span>
             </div> -->
 
@@ -29,12 +29,12 @@
             </div> -->
 
                 <div class="flex flex-col w-full text-center px-3">
-                <span class="text-sm font-semibold text-bg-primary">BDT {{newPrice}}</span>
+                <span class="text-sm font-semibold text-bg-primary">BDT {{salesPrice}}</span>
                 <span
                     style=" color: #8D8D8D "
                     class="self-center flex-1 text-xs font-normal"
                 >
-                    BDT {{oldPrice}}
+                    BDT {{regularPrice}}
                 </span>
                 <!-- <div class="flex items-center">
                         <span v-for="starCounts in startCount" :key="starCounts" style=" margin-right: 10px ">
@@ -54,13 +54,13 @@
                 </div> -->
             </div>
 
-            <span class="font-semibold font-poppins w-full text-center px-3" style=" font-size: 20px; ">
+            <span class="font-semibold font-poppins w-full text-center px-3 two-line-ellipsis" style=" font-size: 20px; ">
                 {{name}}
             </span>
 
             
 
-            <!-- <template v-if="stock !== null">
+            <!-- <template v-if="inventory !== null">
                 <div class="flex flex-col items-center gap-1">
                     <div
                         style="
@@ -77,7 +77,7 @@
                     </div>
 
                     <span style=" color: #8D8D8D " class="text-xs font-light font-lato">
-                        {{stock}} Left Stock
+                        {{inventory}} Left inventory
                     </span>
                 </div>
 
@@ -109,22 +109,22 @@
         </router-link>
 
             <div v-if="description !== null && starCount!== null" class="flex flex-col items-center gap-1 font-poppins">
-                <span class="text-sm font-semibold text-bg-primary">BDT {{newPrice}}</span>
+                <span class="text-sm font-semibold text-bg-primary">BDT {{salesPrice}}</span>
                 <span style=" color: #8D8D8D " class="text-xs font-normal">
-                    BDT {{oldPrice}}
+                    BDT {{regularPrice}}
                 </span>
             </div>
-            <span class="font-normal font-poppins" style=" font-size: 18px; max-width: 124px ">
+            <span class="font-normal font-poppins two-line-ellipsis" style=" font-size: 18px; max-width: 124px ">
                 {{name}}
             </span>
 
             <!-- <div v-if="description == null && starCount== null" class="flex px-4">
-                <span class="text-sm font-semibold text-bg-primary">BDT {{newPrice}}</span>
+                <span class="text-sm font-semibold text-bg-primary">BDT {{salesPrice}}</span>
                 <span
                     style=" color: #8D8D8D "
                     class="self-center flex-1 ml-2 text-xs font-normal"
                 >
-                    BDT {{oldPrice}}
+                    BDT {{regularPrice}}
                 </span>
                 <div class="flex items-center">
                         <span v-for="starCounts in startCount" :key="starCounts" style=" margin-right: 10px ">
@@ -144,7 +144,7 @@
                 </div>
             </div> -->
 
-            <template v-if="stock !== null">
+            <template v-if="inventory !== null">
                 <div class="flex flex-col items-center gap-1">
                     <div
                                             style="
@@ -161,11 +161,11 @@
                                         </div>
 
                     <span style=" color: #8D8D8D " class="text-xs font-light font-lato">
-                        {{stock}} Left Stock
+                        {{inventory}} Left stock
                     </span>
                 </div>
 
-                <button
+                <button @click="try1"
                     type="button"
                     class="w-32 py-2 text-xs font-light tracking-wide text-center border rounded-md border-bg-primary text-bg-primary"
                 >
@@ -179,17 +179,24 @@
 export default {
 props:{
 image: String,
-    newPrice: Number,
-    oldPrice: Number,
+    salesPrice: Number,
+    regularPrice: Number,
     name: String,
-    stock: Number,
+    inventory: Number,
     description: String,
     starCount: Number,
     showEmAll:Boolean
-}
+},
 }
 </script>
 
-<style>
-
+<style scoped>
+ .two-line-ellipsis {
+           word-break: break-word;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 1; /* number of lines to show */
+   -webkit-box-orient: vertical;
+    }
 </style>

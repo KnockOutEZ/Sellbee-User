@@ -1,9 +1,11 @@
-<template>
-  <Navbar/>
+<template >
+  <div v-if="$store.state.lineChartIsLoaded">
+    <Navbar/>
 
   <router-view/>
 
   <Footer/>
+  </div>
 </template>
 
 <script>
@@ -15,6 +17,9 @@ export default {
     Navbar,
     Footer
 },
+beforeCreate() {
+    this.$store.dispatch("initApp");
+  }
 }
 </script>
 

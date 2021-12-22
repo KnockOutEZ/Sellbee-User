@@ -12,9 +12,5 @@ export default {
   components: {
     FirstPage
   },
-
-  created() {
-    this.$store.dispatch("initApp");
-  }
 }
 </script>

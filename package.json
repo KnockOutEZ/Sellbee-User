@@ -16,6 +16,7 @@
     "postcss": "^7",
     "swiper": "^7.3.3",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
+    "v-pagination-3": "^0.1.7",
     "vue": "^3.0.0",
     "vue-awesome-swiper": "^4.1.1",
     "vue-router": "^4.0.0-0",

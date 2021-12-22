@@ -43,7 +43,7 @@
                                 </span>
                             </div>
                             <span class="text-xs font-semibold font-poppins">
-                                BDT {{product.price}}
+                                BDT {{product.regularPrice}}
                             </span>
                             <div class="flex gap-2">
                                 <button
@@ -93,7 +93,7 @@ data(){
         {
             id: 1,
             name: 'test 1',
-            price: 50,
+            regularPrice: 50,
             starCount: 4,
             reviewCount: 12,
             image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
@@ -101,7 +101,7 @@ data(){
         {
             id: 2,
             name: 'test 2',
-            price: 50,
+            regularPrice: 50,
             starCount: 4,
             reviewCount: 12,
             image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
@@ -109,7 +109,7 @@ data(){
         {
             id: 3,
             name: 'test 3',
-            price: 50,
+            regularPrice: 50,
             starCount: 4,
             reviewCount: 12,
             image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
@@ -117,7 +117,7 @@ data(){
         {
             id: 4,
             name: 'test 4',
-            price: 50,
+            regularPrice: 50,
             starCount: 4,
             reviewCount: 12,
             image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
@@ -125,7 +125,7 @@ data(){
         {
             id: 5,
             name: 'test 5',
-            price: 50,
+            regularPrice: 50,
             starCount: 4,
             reviewCount: 12,
             image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
@@ -133,7 +133,7 @@ data(){
         {
             id: 6,
             name: 'test 6',
-            price: 50,
+            regularPrice: 50,
             starCount: 4,
             reviewCount: 12,
             image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
@@ -141,7 +141,7 @@ data(){
         {
             id: 7,
             name: 'test 7',
-            price: 50,
+            regularPrice: 50,
             starCount: 4,
             reviewCount: 12,
             image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
@@ -149,7 +149,7 @@ data(){
         {
             id: 8,
             name: 'test 8',
-            price: 50,
+            regularPrice: 50,
             starCount: 4,
             reviewCount: 12,
             image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
@@ -157,14 +157,17 @@ data(){
         {
             id: 9,
             name: 'test 9',
-            price: 50,
+            regularPrice: 50,
             starCount: 4,
             reviewCount: 12,
             image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
     ]
     }
-}
+},
+    created() {
+    this.products = this.$store.state.products.data
+  },
 }
 </script>
 
