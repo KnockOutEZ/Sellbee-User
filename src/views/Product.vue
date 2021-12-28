@@ -604,7 +604,7 @@ data(){
 },
 mounted(){
   this.singleProduct = this.$route.params.id
-}
+},
 }
 </script>
 

@@ -4,6 +4,7 @@ import axios from 'axios'
 export default createStore({
   state: {
     products: [],
+    productPagination:0,
     lineChartIsLoaded : false
   },
   mutations: {
@@ -15,6 +16,8 @@ export default createStore({
   },
   actions: {
     initApp(context) {
+      // ?page=2&size=2
+
       axios.get(process.env.VUE_APP_API_URL + "products/customer").then((response) => {
         context.commit("initProducts", response);
       }).catch((error) => {

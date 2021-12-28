@@ -4,10 +4,10 @@
                 Special Offers
             </div>
 
-            <div
+            <div v-if="renderComponent"
                 class="md:grid grid-cols-6 gap-4"
             >
-                    <Product
+                    <Product 
                     v-for="product in products" :key="product.id"
                         :name="product.name"
                         :regularPrice="product.regularPrice"
@@ -15,13 +15,13 @@
                         :image="product.image"
                     />
             </div>
-            <pagination class="flex" v-model="page" :records="productLength" :per-page="5" @paginate="myCallback"/>
+            <pagination class="flex" v-model="page" :records="productLength" :per-page="6" @paginate="myCallback"/>
         </div>
 </template>
 
 <script>
 import Product from "./Product.vue"
-
+import axios from 'axios'
 
 export default {
     components:{
@@ -29,6 +29,7 @@ export default {
     },
 data(){
     return{
+        renderComponent: true,
          page: 1,
          productLength:0,
         products : [
@@ -38,72 +39,56 @@ data(){
         //     salesPrice: 50,
         //     image: 'https://picsum.photos/800/300/?random',
         // },
-        {
-            id: 1,
-            name: 'test 1',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 2,
-            name: 'test 2',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 3,
-            name: 'test 3',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 4,
-            name: 'test 4',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 5,
-            name: 'test 5',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 6,
-            name: 'test 6',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 7,
-            name: 'test 7',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
     ]
     }
 },
 methods:{
+    forceRerender() {
+        // Removing my-component from the DOM
+        this.renderComponent = false;
+
+        this.$nextTick(() => {
+          // Adding the component back in
+          this.renderComponent = true;
+        });
+      },
     myCallback(value){
-        console.log(value)
-    }
-},
- mounted() {
-     this.productLength = this.products.length
+        axios.get(process.env.VUE_APP_API_URL + "products/customer?page=" + value + "&size=6").then((response) => {
+        console.log(response);
+        this.products = response.data.data
+        this.forceRerender
+      }).catch((error) => {
+        // handle error
+        console.log(error);
+      });
     },
+},
     created() {
-    this.products = this.$store.state.products.data
+        axios.get(process.env.VUE_APP_API_URL + "products/customer?page=1&size=6").then((response) => {
+        this.products = response.data.data
+        this.productLength = this.$store.state.products.data.length
+      }).catch((error) => {
+        // handle error
+        console.log(error);
+      });
   },
 }
 </script>
 
 <style>
+.VuePagination__pagination{
+    display: flex;
+    text-align: center;
+    display: inline-block;
+}
 
+.VuePagination__pagination > li {
+  color: white;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  background-color: #4B4E6D;
+  margin: 3px;
+  border-radius: 5px;
+}
 </style>
