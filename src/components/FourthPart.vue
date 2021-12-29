@@ -13,6 +13,7 @@
                         :regularPrice="product.regularPrice"
                         :salesPrice="product.salesPrice"
                         :image="product.image"
+                        :productId = "product._id"
                     />
             </div>
             <pagination class="flex" v-model="page" :records="productLength" :per-page="6" @paginate="myCallback"/>

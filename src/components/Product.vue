@@ -5,7 +5,7 @@
          bg-white gap-2 pb-4 rounded-2xl"
         style=" box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.06) "
     >
-        <router-link class="w-full" :to="{ path: '/product/' + name}">
+        <router-link class="w-full" :to="{ path: '/product/' + productId}">
             <img
                 :src="image"
                 :alt="name"
@@ -99,7 +99,7 @@
          bg-white gap-4 pb-4 rounded-2xl"
         style=" box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.06) "
     >
-        <router-link class="w-full" :to="{ path: '/product/' + name}">
+        <router-link class="w-full" :to="{ path: '/product/' + productId}">
             <img
                 :src="image"
                 :alt="name"
@@ -185,7 +185,8 @@ image: String,
     inventory: Number,
     description: String,
     starCount: Number,
-    showEmAll:Boolean
+    showEmAll:Boolean,
+    productId:Number
 },
 }
 </script>

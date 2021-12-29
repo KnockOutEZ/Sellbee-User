@@ -33,6 +33,7 @@
                         :image="product.image"
                         :inventory="product.inventory"
                         :showEmAll = "true"
+                        :productId = "product._id"
                     />
             </div>
         </div>

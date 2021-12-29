@@ -20,7 +20,7 @@
         bg-white pb-4 rounded-2xl"
         style=" box-shadow: '0px 3px 3px 0 rgba(0, 0, 0, 0.06)' "
     >
-        <router-link class=" w-full" :to="{ path: '/product/' + product.name}">
+        <router-link class=" w-full" :to="{ path: '/product/' + product._id}">
             <img
                 :src="product.image"
                 :alt="product.name"
@@ -143,7 +143,7 @@
         bg-white pb-4 rounded-2xl"
         style=" box-shadow: '0px 3px 3px 0 rgba(0, 0, 0, 0.06)' "
     >
-        <router-link class=" w-full" :to="{ path: '/product/' + product.id}">
+        <router-link class=" w-full" :to="{ path: '/product/' + product._id}">
             <img
                 :src="product.image"
                 :alt="product.name"

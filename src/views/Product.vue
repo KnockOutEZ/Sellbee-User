@@ -27,28 +27,28 @@
                     <div class="flex flex-col" style=" width: 400px ">
                         <!-- {/* <div style={{ height: 266 }}> */} -->
                         <div>
-                          <carousel class="hidden md:block mb-2" :autoplay="1000" :wrapAround="true" :items-to-show="1.2">
-    <slide v-for="image in images" :key="image">
-      <img class="object-cover w-full h-72" :src="image" :alt="singleProduct">
-    </slide>
+                          <!-- <carousel class="hidden md:block mb-2" :autoplay="1000" :wrapAround="true" :items-to-show="1.2"> -->
+    <!-- <slide v-for="image in images" :key="image"> -->
+      <img class="object-cover w-full h-72 rounded-lg" :src="images" :alt="singleProduct">
+    <!-- </slide> -->
 
     <!-- <template #addons>
       <navigation />
       <pagination />
     </template> -->
-  </carousel>
+  <!-- </carousel> -->
 
 
-  <carousel class="md:hidden mb-2" :autoplay="1000" :wrapAround="true" :items-to-show="1">
-    <slide v-for="image in images" :key="image">
-      <img class="object-cover w-full h-72" :src="image" :alt="singleProduct">
-    </slide>
+  <!-- <carousel class="md:hidden mb-2" :autoplay="1000" :wrapAround="true" :items-to-show="1"> -->
+    <!-- <slide v-for="image in images" :key="image"> -->
+      <!-- <img class="object-cover w-full h-72" :src="images" :alt="singleProduct"> -->
+    <!-- </slide> -->
 
     <!-- <template #addons>
       <navigation />
       <pagination />
     </template> -->
-  </carousel>
+  <!-- </carousel> -->
                         </div>
 
                         <div
@@ -93,7 +93,7 @@
                         </span>
 
                         <span class="text-sm font-bold tracking-wide text-bg-primary">
-                            Premium Teeshirt Best High Quality
+                            {{singleProduct}}
                         </span>
 
                         <div class="flex flex-col md:flex-row items-start md:space-y-0 space-y-3 mt-4 mb-8">
@@ -204,9 +204,7 @@
 
                             <div class="flex flex-col gap-6 mt-6">
 
-                                    <span v-for="(feature,index) in features" :key="index" class="capitalize">
-                                         {{feature}}
-                                    </span>
+                                         <span v-html="feature" class="capitalize"></span>
                             </div>
                         </div>
 
@@ -568,12 +566,13 @@
 import SeventhPart from '../components/SeventhPart.vue'
 import 'vue3-carousel/dist/carousel.css';
 // , Pagination, Navigation
-import { Carousel, Slide } from 'vue3-carousel';
+// import { Carousel, Slide } from 'vue3-carousel';
+import axios from 'axios'
 
 export default {
   components:{
-    Carousel,
-    Slide,
+    // Carousel,
+    // Slide,
     SeventhPart
   },
 data(){
@@ -603,7 +602,16 @@ data(){
   }
 },
 mounted(){
-  this.singleProduct = this.$route.params.id
+//   this.singleProduct = 
+  axios.get(process.env.VUE_APP_API_URL + "products/" + this.$route.params.id).then((response) => {
+      let daResponse = response.data.data
+        this.singleProduct = daResponse.name
+        this.features = daResponse.description
+        this.images = daResponse.image
+      }).catch((error) => {
+        // handle error
+        console.log(error);
+      });
 },
 }
 </script>

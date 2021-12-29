@@ -25,7 +25,7 @@
                 >
                         <slide v-for="slide in slides" :key="slide.id" class="mx-2">
                             <div class="flex w-64 gap-3 py-2 pl-2 bg-white rounded-xl font-poppins">
-                                <router-link :to="{ path: '/product/' + slide.name}">
+                                <router-link :to="{ path: '/product/' + slide._id}">
                                     <img
                                         :src="slide.image"
                                         :alt="slide.name"
@@ -89,7 +89,7 @@
                 >
                         <slide v-for="slide in slides" :key="slide.id">
                             <div class="flex w-64 gap-3 py-2 pl-2 bg-white rounded-xl font-poppins">
-                                <router-link :to="{ path: '/product/' + slide.id}">
+                                <router-link :to="{ path: '/product/' + slide._id}">
                                     <img
                                         :src="slide.image"
                                         :alt="slide.name"

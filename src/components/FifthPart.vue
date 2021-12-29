@@ -8,7 +8,7 @@
                 class="px-3 md:grid grid-cols-6 gap-4"
             >
                     <div v-for="product in products" :key="product.id" class="flex" style=" height: 70px ">
-                        <router-link :to="{ path: '/product/' + product.id}">
+                        <router-link :to="{ path: '/product/' + product._id}">
                             <img
                                 :src="product.image"
                                 :alt="product.name"
