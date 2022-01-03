@@ -204,7 +204,7 @@
 
                             <div class="flex flex-col gap-6 mt-6">
 
-                                         <span v-html="feature" class="capitalize"></span>
+                                         <span v-html="features" class="capitalize"></span>
                             </div>
                         </div>
 
