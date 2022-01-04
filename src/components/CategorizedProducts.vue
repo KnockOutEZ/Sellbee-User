@@ -118,112 +118,115 @@ export default {
     components:{
         Product
     },
+    props:{
+        products:[]
+    },
 data(){
     return{
-        products : [
-        {
-            id: 1,
-            name: 'test 1',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 2,
-            name: 'test 2',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 3,
-            name: 'test 3',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 4,
-            name: 'test 4',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 5,
-            name: 'test 5',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 6,
-            name: 'test 6',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 7,
-            name: 'test 7',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 8,
-            name: 'test 8',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 9,
-            name: 'test 9',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 10,
-            name: 'test 10',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 11,
-            name: 'test 11',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 12,
-            name: 'test 12',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 13,
-            name: 'test 13',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-        {
-            id: 14,
-            name: 'test 14',
-            regularPrice: 100,
-            salesPrice: 50,
-            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
-        },
-    ]
+        product : this.products
+    //     {
+    //         id: 1,
+    //         name: 'test 1',
+    //         regularPrice: 100,
+    //         salesPrice: 50,
+    //         image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+    //     },
+    //     {
+    //         id: 2,
+    //         name: 'test 2',
+    //         regularPrice: 100,
+    //         salesPrice: 50,
+    //         image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+    //     },
+    //     {
+    //         id: 3,
+    //         name: 'test 3',
+    //         regularPrice: 100,
+    //         salesPrice: 50,
+    //         image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+    //     },
+    //     {
+    //         id: 4,
+    //         name: 'test 4',
+    //         regularPrice: 100,
+    //         salesPrice: 50,
+    //         image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+    //     },
+    //     {
+    //         id: 5,
+    //         name: 'test 5',
+    //         regularPrice: 100,
+    //         salesPrice: 50,
+    //         image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+    //     },
+    //     {
+    //         id: 6,
+    //         name: 'test 6',
+    //         regularPrice: 100,
+    //         salesPrice: 50,
+    //         image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+    //     },
+    //     {
+    //         id: 7,
+    //         name: 'test 7',
+    //         regularPrice: 100,
+    //         salesPrice: 50,
+    //         image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+    //     },
+    //     {
+    //         id: 8,
+    //         name: 'test 8',
+    //         regularPrice: 100,
+    //         salesPrice: 50,
+    //         image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+    //     },
+    //     {
+    //         id: 9,
+    //         name: 'test 9',
+    //         regularPrice: 100,
+    //         salesPrice: 50,
+    //         image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+    //     },
+    //     {
+    //         id: 10,
+    //         name: 'test 10',
+    //         regularPrice: 100,
+    //         salesPrice: 50,
+    //         image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+    //     },
+    //     {
+    //         id: 11,
+    //         name: 'test 11',
+    //         regularPrice: 100,
+    //         salesPrice: 50,
+    //         image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+    //     },
+    //     {
+    //         id: 12,
+    //         name: 'test 12',
+    //         regularPrice: 100,
+    //         salesPrice: 50,
+    //         image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+    //     },
+    //     {
+    //         id: 13,
+    //         name: 'test 13',
+    //         regularPrice: 100,
+    //         salesPrice: 50,
+    //         image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+    //     },
+    //     {
+    //         id: 14,
+    //         name: 'test 14',
+    //         regularPrice: 100,
+    //         salesPrice: 50,
+    //         image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+    //     },
+    // ]
     }
 },
 created() {
-    this.products = this.$store.state.products.data
+    this.product = this.$store.state.products.data
   },
 }
 </script>

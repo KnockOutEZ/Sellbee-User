@@ -5,14 +5,19 @@ export default createStore({
   state: {
     products: [],
     productPagination:0,
-    lineChartIsLoaded : false
+    lineChartIsLoaded : false,
+    isAuthenticated: false,
   },
   mutations: {
     initProducts(state, products) {
       state.products = products.data;
       state.lineChartIsLoaded = true
       console.log(products);
-    }
+    },
+    toggleAuthenticated(state){
+      localStorage.setItem('isAuthenticated', !state.isAuthenticated);
+      state.isAuthenticated = !state.isAuthenticated 
+    },
   },
   actions: {
     initApp(context) {

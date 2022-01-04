@@ -1,7 +1,9 @@
 <template>
   <div>
     <main class="mt-10">
-      <div class="flex flex-col md:flex-row justify-between mx-10 mb-24 md:mx-p-w">
+      <div
+        class="flex flex-col md:flex-row justify-between mx-10 mb-24 md:mx-p-w"
+      >
         <div class="flex flex-col gap-12 w-full md:w-60">
           <div
             class="flex flex-col py-6 overflow-auto border gap-7 rounded-2xl"
@@ -73,6 +75,7 @@
             <div class="flex flex-col gap-4">
               <div class="example">
                 <Slider
+                :max = 1000
                   class=""
                   v-model="example2.value"
                   v-bind="example2"
@@ -440,6 +443,7 @@
 
             <div class="flex flex-col">
               <button
+                @click="filterBtn"
                 type="button"
                 class="
                   flex
@@ -479,8 +483,160 @@
         </div>
 
         <div class="w-full overflow-hidden md:w-9/12">
-          <ImageSlider :pageName="all-categories" />
-          <CategorizedProducts :categoryTitle="Laptop-Products" />
+          <ImageSlider :pageName="all - categories" />
+          <div v-if="renderComponent">
+            <div class="flex items-center justify-between mb-7">
+              <span class="text-2xl font-semibold tracking-wide font-poppins">
+                 categoryTitle 
+              </span>
+              <div class="flex items-center gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10.001"
+                  height="9.5"
+                  viewBox="0 0 10.001 9.5"
+                >
+                  <path
+                    id="Vector"
+                    d="M2865.031,423h-1.979a.491.491,0,0,1-.469-.508v-1.7a.491.491,0,0,1,.469-.509h1.979a.491.491,0,0,1,.469.509v1.7A.491.491,0,0,1,2865.031,423Zm-3.542,0h-1.978a.491.491,0,0,1-.469-.508v-1.7a.491.491,0,0,1,.469-.509h1.978a.491.491,0,0,1,.47.509v1.7A.491.491,0,0,1,2861.489,423Zm-3.541,0h-1.98a.491.491,0,0,1-.469-.508v-1.7a.491.491,0,0,1,.469-.509h1.98a.491.491,0,0,1,.468.509v1.7A.49.49,0,0,1,2857.948,423Zm7.083-3.393h-1.979a.491.491,0,0,1-.469-.509v-1.7a.491.491,0,0,1,.469-.509h1.979a.491.491,0,0,1,.469.509v1.7A.491.491,0,0,1,2865.031,419.607Zm-3.542,0h-1.978a.491.491,0,0,1-.469-.509v-1.7a.491.491,0,0,1,.469-.509h1.978a.491.491,0,0,1,.47.509v1.7A.491.491,0,0,1,2861.489,419.607Zm-3.541,0h-1.98a.491.491,0,0,1-.469-.509v-1.7a.491.491,0,0,1,.469-.509h1.98a.491.491,0,0,1,.468.509v1.7A.49.49,0,0,1,2857.948,419.607Zm7.083-3.393h-1.979a.491.491,0,0,1-.469-.509v-1.7a.491.491,0,0,1,.469-.509h1.979a.491.491,0,0,1,.469.509v1.7A.491.491,0,0,1,2865.031,416.214Zm-3.542,0h-1.978a.491.491,0,0,1-.469-.509v-1.7a.491.491,0,0,1,.469-.509h1.978a.491.491,0,0,1,.47.509v1.7A.491.491,0,0,1,2861.489,416.214Zm-3.541,0h-1.98a.491.491,0,0,1-.469-.509v-1.7a.491.491,0,0,1,.469-.509h1.98a.491.491,0,0,1,.468.509v1.7A.49.49,0,0,1,2857.948,416.214Z"
+                    transform="translate(-2855.499 -413.5)"
+                    fill="#493548"
+                  />
+                </svg>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="9.499"
+                  height="9"
+                  viewBox="0 0 9.499 9"
+                >
+                  <path
+                    id="Vector"
+                    d="M2886.054,422.5h-5.244a.465.465,0,0,1-.446-.482v-1.607a.466.466,0,0,1,.446-.482h5.244a.465.465,0,0,1,.445.482v1.607A.465.465,0,0,1,2886.054,422.5Zm-6.729,0h-1.88a.465.465,0,0,1-.445-.482v-1.607a.465.465,0,0,1,.445-.482h1.88a.466.466,0,0,1,.446.482v1.607A.465.465,0,0,1,2879.325,422.5Zm6.729-3.214h-5.244a.466.466,0,0,1-.446-.482V417.2a.466.466,0,0,1,.446-.482h5.244a.465.465,0,0,1,.445.482V418.8A.465.465,0,0,1,2886.054,419.286Zm-6.729,0h-1.88a.465.465,0,0,1-.445-.482V417.2a.465.465,0,0,1,.445-.482h1.88a.466.466,0,0,1,.446.482V418.8A.466.466,0,0,1,2879.325,419.286Zm6.729-3.215h-5.244a.465.465,0,0,1-.446-.482v-1.607a.466.466,0,0,1,.446-.482h5.244a.465.465,0,0,1,.445.482v1.607A.465.465,0,0,1,2886.054,416.071Zm-6.729,0h-1.88a.465.465,0,0,1-.445-.482v-1.607a.465.465,0,0,1,.445-.482h1.88a.466.466,0,0,1,.446.482v1.607A.465.465,0,0,1,2879.325,416.071Z"
+                    transform="translate(-2877 -413.5)"
+                    fill="#d2d2d2"
+                  />
+                </svg>
+
+                <span
+                  class="mx-3 font-normal font-lato"
+                  style="color: #a3a3a3; font-size: 8px"
+                >
+                  Show by
+                </span>
+
+                <div class="flex items-center gap-1 cursor-pointer">
+                  <span class="font-semibold font-lato" style="font-size: 8px">
+                    Popularity
+                  </span>
+                  <!-- <RiArrowDownSFill /> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="md:grid grid-cols-4 gap-4 px-p-w">
+              <Product
+                v-for="product in products"
+                :key="product.id"
+                :name="product.name"
+                :regularPrice="product.regularPrice"
+                :salesPrice="product.salesPrice"
+                :image="product.image"
+                :productId = "product._id"
+              />
+            </div>
+
+            <div class="flex items-center justify-between mt-7">
+              <span
+                class="font-normal font-lato"
+                style="color: #a3a3a3; font-size: 8px"
+              >
+                Showing 9 of 120 results
+              </span>
+
+              <div class="flex gap-1">
+                <span
+                  class="
+                    flex
+                    items-center
+                    justify-center
+                    h-6
+                    font-bold
+                    text-white
+                    cursor-pointer
+                    bg-bg-primary
+                    font-lato
+                  "
+                  style="font-size: 8px; border-radius: 6.5px; width: 29.5px"
+                >
+                  1
+                </span>
+                <span
+                  class="
+                    flex
+                    items-center
+                    justify-center
+                    h-6
+                    px-3
+                    font-extrabold
+                    cursor-pointer
+                    text-bg-primary
+                    font-lato
+                  "
+                  style="
+                    font-size: 8px;
+                    borderradius: 6.5px;
+                    backgroundcolor: rgba(73, 53, 72, 0.12);
+                    width: 29.5px;
+                  "
+                >
+                  2
+                </span>
+                <span
+                  class="
+                    flex
+                    items-center
+                    justify-center
+                    h-6
+                    px-3
+                    font-bold
+                    cursor-pointer
+                    text-bg-primary
+                    font-lato
+                  "
+                  style="
+                    font-size: 8px;
+                    border-radius: 6.5px;
+                    background-color: rgba(73, 53, 72, 0.12);
+                    width: 29.5px;
+                  "
+                >
+                  3
+                </span>
+                <span
+                  class="
+                    flex
+                    items-center
+                    justify-center
+                    h-6
+                    px-3
+                    font-bold
+                    cursor-pointer
+                    text-bg-primary
+                    font-lato
+                  "
+                  style="
+                    font-size: 8px;
+                    border-radius: 6.5px;
+                    background-color: rgba(73, 53, 72, 0.12);
+                    width: 29.5px;
+                  "
+                >
+                  ...
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -490,23 +646,60 @@
 </template>
 
 <script>
+import axios from "axios";
 import SeventhPart from "../components/SeventhPart.vue";
 import ImageSlider from "../components/ImageSlider.vue";
-import CategorizedProducts from "../components/CategorizedProducts.vue";
 import Slider from "@vueform/slider";
+import Product from "../components/Product.vue";
 
 export default {
   components: {
     SeventhPart,
     ImageSlider,
-    CategorizedProducts,
     Slider,
+    Product,
+  },
+  created() {
+    this.products = this.$store.state.products.data
+  },
+  methods: {
+    forceRerender() {
+      // Removing my-component from the DOM
+      this.renderComponent = false;
+
+      this.$nextTick(() => {
+        // Adding the component back in
+        this.renderComponent = true;
+      });
+    },
+    filterBtn() {
+      console.log(this.example2.value);
+      axios
+        .get(
+          process.env.VUE_APP_API_URL +
+            "products/customer?priceStart=" +
+            this.example2.value[0] +
+            "&priceEnd=" +
+            this.example2.value[1]
+        )
+        .then((response) => {
+          console.log(response);
+          this.products = response.data.data;
+          this.forceRerender;
+        })
+        .catch((error) => {
+          // handle error
+          console.log(error);
+        });
+    },
   },
   data() {
     return {
+      renderComponent: true,
+      products: [],
       dropdown: false,
       example2: {
-        value: [20, 40],
+        value: [0, 1000],
       },
       subCat: false,
       categories: [

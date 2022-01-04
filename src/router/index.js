@@ -7,6 +7,8 @@ import Category from '../views/Category.vue'
 import CancelOrders from '../views/CancelOrders.vue'
 import TrackOrder from '../views/TrackOrder.vue'
 import OrderConfirm from '../views/OrderConfirm.vue'
+import SignIn from '../views/SignIn.vue'
+import SignUp from '../views/SignUp.vue'
 
 const routes = [
   {
@@ -49,6 +51,16 @@ const routes = [
     name: 'OrderConfirm',
     component:OrderConfirm
   },
+  {
+    path: '/signup',
+    name: 'SignUp',
+    component:SignUp
+  },
+  {
+    path: '/signin',
+    name: 'SignIn',
+    component:SignIn
+  }
 ]
 
 const router = createRouter({

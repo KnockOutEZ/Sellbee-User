@@ -111,7 +111,7 @@
                 "
             >
             <i class="fas fa-user"></i>
-                <span style=" fontSize: 9 ">MY ACCOUNT</span>
+                <router-link to="/signup" style=" fontSize: 9 ">MY ACCOUNT</router-link>
             </div>
         </div>
 
