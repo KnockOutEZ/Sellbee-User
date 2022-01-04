@@ -45,6 +45,7 @@
 
 <script>
 import axios from "axios";
+import axiosJWT from "../store/axios"
 
 export default {
      data() {
@@ -66,7 +67,7 @@ methods:{
           console.log(res);
           this.$store.commit("toggleAuthenticated");
           console.log(this.$store.state.isAuthenticated)
-          this.$router.push({ path: "/" });
+          this.$router.go({ path: "/" });
           console.log(res.data);
         })
         .catch((error) => {
@@ -77,7 +78,18 @@ methods:{
           //Perform action in always
         });
     },
-}
+},
+  beforeRouteEnter(to, from, next) {
+      axiosJWT.get(process.env.VUE_APP_API_URL + 'customer/get-me',{withCredentials:true})
+        .then((res) => {
+          console.log(res)
+        next({ path: '/' });
+      }).catch((error) => {
+        console.log(error)
+        next();
+
+})
+  },
 }
 </script>
 

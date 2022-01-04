@@ -546,7 +546,7 @@
               />
             </div>
 
-            <div class="flex items-center justify-between mt-7">
+            <!-- <div class="flex items-center justify-between mt-7">
               <span
                 class="font-normal font-lato"
                 style="color: #a3a3a3; font-size: 8px"
@@ -635,7 +635,7 @@
                   ...
                 </span>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
