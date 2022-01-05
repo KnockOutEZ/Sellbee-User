@@ -51,7 +51,7 @@
               class="flex items-center gap-10 px-3 border rounded-md h-9"
               style="border-color: #d8d8d8"
             >
-              <span class="cursor-pointer" @click="quantity--">
+              <button class="cursor-pointer" @click="quantityProduct--">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="9.5"
@@ -66,14 +66,14 @@
                     fill="#d2d2d2"
                   />
                 </svg>
-              </span>
+              </button>
               <span
                 class="font-bold font-lato"
                 style="font-size: 10px; color: #ff7020"
               >
-                {{quantity}}
+                {{quantityProduct}}
               </span>
-              <span class="cursor-pointer" @click="quantity++">
+              <button class="cursor-pointer" @click="quantityProduct++">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="8.784"
@@ -88,7 +88,7 @@
                     fill="#d2d2d2"
                   />
                 </svg>
-              </span>
+              </button>
             </div>
 
             <span>
@@ -190,20 +190,44 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   props: {
     selected: Boolean,
-    productImage: String,
-    quantityProduct:Number,
-    ProductPrice:Number,
-    ProductModel:String,
-    ProductName:String,
+    cart:Array,
+            index:Number,
   },
       data(){
         return{
-            quantity: this.quantityProduct,
+    productImage: "",
+    quantityProduct:"",
+    ProductPrice:"",
+    ProductModel:"",
+    ProductName:"",
         }
     },
+
+    mounted(){
+      console.log(this.index);
+      axios
+      //  + this.cart.products[this.index].productId
+        .get(
+          process.env.VUE_APP_API_URL + "products/" + this.cart.products[0].productId
+        )
+        .then((response) => {
+          let daResponse = response.data.data;
+         console.log(response)
+          this.productImage = daResponse.image;
+          this.quantityProduct = this.cart.products[0].quantity;
+          this.ProductPrice =  (daResponse.salesPrice) ? daResponse.regularPrice :daResponse.salesPrice;
+          this.ProductModel = daResponse.image;
+          this.ProductName = daResponse.image;
+        })
+        .catch((error) => {
+          // handle error
+          console.log(error);
+        });
+    }
 };
 </script>
 

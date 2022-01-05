@@ -43,7 +43,7 @@
         </div>
 
         <div v-for="(cart, index) in carts" :key="index">
-          <CartProduct />
+          <CartProduct :index = "index" :cart = "cart"/>
         </div>
       </div>
 
@@ -158,20 +158,35 @@
 
 <script>
 import CartProduct from '../components/CartProduct.vue'
-
+import axios from 'axios';
 export default {
 components:{
     CartProduct
 },
 data(){
     return{
-        carts:5
+        carts:[]
     }
 },
 methods:{
     checkOut(){
         this.$router.push("/checkout")
 }
+    },
+    beforeCreate(){
+       axios
+        .get(
+          process.env.VUE_APP_API_URL + "order",
+          { withCredentials: true }
+        )
+        .then((response) => {
+          let daResponse = response.data.data;
+          this.carts = daResponse
+        })
+        .catch((error) => {
+          // handle error
+          console.log(error);
+        });
     }
 }
 </script>
