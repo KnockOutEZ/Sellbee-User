@@ -219,7 +219,7 @@ export default {
          console.log(response)
           this.productImage = daResponse.image;
           this.quantityProduct = this.cart.products[0].quantity;
-          this.ProductPrice =  (daResponse.salesPrice) ? daResponse.regularPrice :daResponse.salesPrice;
+          this.ProductPrice =  (daResponse.salesPrice) ? daResponse.salesPrice :daResponse.regularPrice;
           this.ProductModel = daResponse.image;
           this.ProductName = daResponse.image;
         })

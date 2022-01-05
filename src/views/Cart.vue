@@ -165,7 +165,8 @@ components:{
 },
 data(){
     return{
-        carts:[]
+        carts:[],
+        index:0,
     }
 },
 methods:{
@@ -182,6 +183,7 @@ methods:{
         .then((response) => {
           let daResponse = response.data.data;
           this.carts = daResponse
+          this.index = this.carts.length
         })
         .catch((error) => {
           // handle error
