@@ -259,7 +259,7 @@
                                 class="flex md:mx-0 mx-auto items-center gap-10 px-3 border rounded-md h-9"
                                 style=" border-color: #D8D8D8 "
                             >
-                                <span class="cursor-pointer">
+                                <span class="cursor-pointer" @click="quantity--">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="9.5"
@@ -279,9 +279,9 @@
                                     class="font-bold text-bg-primary font-lato"
                                     style=" font-size: 10px "
                                 >
-                                    1
+                                    {{quantity}}
                                 </span>
-                                <span class="cursor-pointer">
+                                <span class="cursor-pointer" @click="quantity++">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="8.784"
@@ -306,7 +306,7 @@
                                 >
                                     buy
                                 </span>
-                                <span
+                                <span @click="addToCart"
                                     class="flex items-center justify-center w-32 font-bold text-white uppercase rounded-md cursor-pointer bg-bg-primary font-lato h-9"
                                     style=" font-size: 10px "
                                 >
@@ -577,6 +577,8 @@ export default {
   },
 data(){
   return{
+      daResponse:[],
+      quantity:1,
     singleProduct:"",
     stars:4,
     starCount:[
@@ -601,10 +603,24 @@ data(){
     ]
   }
 },
+methods:{
+    // addToCart(){
+    //     axios.get(process.env.VUE_APP_API_URL + "products/" + this.$route.params.id).then((response) => {
+    //   let daResponse = response.data.data
+    //     this.singleProduct = daResponse.name
+    //     this.features = daResponse.description
+    //     this.images = daResponse.image
+    //   }).catch((error) => {
+    //     // handle error
+    //     console.log(error);
+    //   });
+    // }
+},
 mounted(){
 //   this.singleProduct = 
   axios.get(process.env.VUE_APP_API_URL + "products/" + this.$route.params.id).then((response) => {
       let daResponse = response.data.data
+      this.daResponse = daResponse
         this.singleProduct = daResponse.name
         this.features = daResponse.description
         this.images = daResponse.image

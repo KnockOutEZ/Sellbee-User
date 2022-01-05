@@ -487,7 +487,7 @@
           <div v-if="renderComponent">
             <div class="flex items-center justify-between mb-7">
               <span class="text-2xl font-semibold tracking-wide font-poppins">
-                 categoryTitle 
+                 Categories
               </span>
               <div class="flex items-center gap-3">
                 <svg
