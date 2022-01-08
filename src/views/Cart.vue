@@ -42,8 +42,8 @@
           </span>
         </div>
 
-        <div v-for="(cart, index) in carts" :key="index">
-          <CartProduct :index = "index" :cart = "cart"/>
+        <div v-for="(cart,index) in carts" :key="index">
+          <CartProduct :cart = "carts" :index = "index"/>
         </div>
       </div>
 
@@ -172,12 +172,9 @@ data(){
 methods:{
     checkOut(){
         this.$router.push("/checkout")
-}
-    },
-    beforeCreate(){
-       axios
-        .get(
-          process.env.VUE_APP_API_URL + "order",
+         axios
+        .post(
+          process.env.VUE_APP_API_URL + "checkout",
           { withCredentials: true }
         )
         .then((response) => {
@@ -189,6 +186,26 @@ methods:{
           // handle error
           console.log(error);
         });
+}
+    },
+    mounted(){
+this.carts = this.$store.state.cartProducts
+console.log(this.carts)
+      //  axios
+      //   .get(
+      //     process.env.VUE_APP_API_URL + "order",
+      //     { withCredentials: true }
+      //   )
+      //   .then((response) => {
+      //     let daResponse = response.data.data;
+      //     this.carts = daResponse
+      //     this.index = this.carts.length
+      //     console.log(daResponse)
+      //   })
+      //   .catch((error) => {
+      //     // handle error
+      //     console.log(error);
+      //   });
     }
 }
 </script>

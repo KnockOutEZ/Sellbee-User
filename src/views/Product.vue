@@ -754,31 +754,51 @@ export default {
   },
   methods: {
     addToCart() {
-      this.ProductsArray = [
+      this.ProductsArray = 
         {
           vendorId: this.daResponse.vendorId,
           productId: this.daResponse._id,
           quantity: this.quantity,
-        },
-      ];
-      axios
-        .post(
-          process.env.VUE_APP_API_URL + "order",
-          {
-            products: this.ProductsArray,
-          },
-          { withCredentials: true }
-        )
-        .then((response) => {
-          let daResponse = response.data.data;
-          this.singleProduct = daResponse.name;
-          this.features = daResponse.description;
-          this.images = daResponse.image;
-        })
-        .catch((error) => {
-          // handle error
-          console.log(error);
-        });
+        }
+      
+      // this.$store.state.cartProducts.map(element => {
+      //   if(element.productId == this.ProductsArray.productId){
+      //     element.quantity = this.ProductsArray.quantity
+      //   }
+      //   return element
+      // })
+
+let productIndex = this.$store.state.cartProducts.findIndex(element=>
+  element.productId == this.ProductsArray.productId
+)
+
+if(productIndex > -1){
+   this.$store.state.cartProducts[productIndex].quantity += this.ProductsArray.quantity;
+  //  console.log(productIndex)
+} else {
+  this.$store.state.cartProducts.push(this.ProductsArray)
+}
+
+
+      console.log(this.$store.state.cartProducts)
+      // axios
+      //   .post(
+      //     process.env.VUE_APP_API_URL + "order",
+      //     {
+      //       products: this.ProductsArray,
+      //     },
+      //     { withCredentials: true }
+      //   )
+      //   .then((response) => {
+      //     let daResponse = response.data.data;
+      //     this.singleProduct = daResponse.name;
+      //     this.features = daResponse.description;
+      //     this.images = daResponse.image;
+      //   })
+      //   .catch((error) => {
+      //     // handle error
+      //     console.log(error);
+      //   });
     },
   },
   mounted() {

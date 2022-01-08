@@ -1,4 +1,5 @@
 <template>
+
   <div
     class="flex items-center py-4 pl-4 pr-8 rounded-md"
     style="box-shadow: 0px 2px 2px 0 rgba(0, 0, 0, 0.06)"
@@ -194,7 +195,7 @@ import axios from 'axios'
 export default {
   props: {
     selected: Boolean,
-    cart:Array,
+    cart:Object,
             index:Number,
   },
       data(){
@@ -207,18 +208,18 @@ export default {
         }
     },
 
-    mounted(){
-      console.log(this.index);
+      mounted(){
+        console.log(this.cart);
       axios
       //  + this.cart.products[this.index].productId
         .get(
-          process.env.VUE_APP_API_URL + "products/" + this.cart.products[0].productId
+          process.env.VUE_APP_API_URL + "products/" + this.cart[this.index].productId
         )
         .then((response) => {
           let daResponse = response.data.data;
          console.log(response)
           this.productImage = daResponse.image;
-          this.quantityProduct = this.cart.products[0].quantity;
+          this.quantityProduct = this.cart[this.index].quantity;
           this.ProductPrice =  (daResponse.salesPrice) ? daResponse.salesPrice :daResponse.regularPrice;
           this.ProductModel = daResponse.image;
           this.ProductName = daResponse.image;
@@ -227,7 +228,29 @@ export default {
           // handle error
           console.log(error);
         });
-    }
+      }
+
+    // mounted(){
+      // console.log(this.cart);
+      // axios
+      // //  + this.cart.products[this.index].productId
+      //   .get(
+      //     process.env.VUE_APP_API_URL + "products/" + this.cart.productId
+      //   )
+      //   .then((response) => {
+      //     let daResponse = response.data.data;
+      //    console.log(response)
+      //     this.productImage = daResponse.image;
+      //     this.quantityProduct = this.cart.products[0].quantity;
+      //     this.ProductPrice =  (daResponse.salesPrice) ? daResponse.salesPrice :daResponse.regularPrice;
+      //     this.ProductModel = daResponse.image;
+      //     this.ProductName = daResponse.image;
+      //   })
+      //   .catch((error) => {
+      //     // handle error
+      //     console.log(error);
+      //   });
+    // }
 };
 </script>
 

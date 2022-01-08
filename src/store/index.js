@@ -7,6 +7,7 @@ export default createStore({
     productPagination:0,
     lineChartIsLoaded : false,
     isAuthenticated: false,
+    cartProducts:[]
   },
   mutations: {
     initProducts(state, products) {

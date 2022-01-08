@@ -378,7 +378,7 @@
                                 </Box> -->
             </div>
 
-            <div>
+            <!-- <div>
               <div class="flex justify-between">
                 <span
                   style="color: #575757; font-size: 11px"
@@ -408,9 +408,9 @@
                     Select All
                   </span>
                 </button>
-              </div>
+              </div> -->
 
-              <div class="grid grid-cols-2 gap-2 pr-12 mt-6 mb-3">
+              <!-- <div class="grid grid-cols-2 gap-2 pr-12 mt-6 mb-3">
                 <span
                   v-for="(color, index) in colors"
                   :key="index"
@@ -439,7 +439,7 @@
               >
                 <span class="hover:underline">+ Show more</span>
               </button>
-            </div>
+            </div> -->
 
             <div class="flex flex-col">
               <button
@@ -476,7 +476,7 @@
                 "
                 style="font-size: 10px; height: 33px"
               >
-                <span class="hover:underline">Reset Filter</span>
+                <!-- <span class="hover:underline">Reset Filter</span> -->
               </button>
             </div>
           </div>
