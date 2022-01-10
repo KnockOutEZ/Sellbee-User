@@ -716,6 +716,7 @@ import "vue3-carousel/dist/carousel.css";
 // , Pagination, Navigation
 // import { Carousel, Slide } from 'vue3-carousel';
 import axios from "axios";
+import axiosJWT from "../store/axios";
 
 export default {
   components: {
@@ -754,7 +755,13 @@ export default {
   },
   methods: {
     addToCart() {
-      this.ProductsArray = 
+      axiosJWT
+      .get(process.env.VUE_APP_API_URL + "customer/get-me", {
+        withCredentials: true,
+      })
+      .then((res) => {
+        console.log(res);
+        this.ProductsArray = 
         {
           vendorId: this.daResponse.vendorId,
           productId: this.daResponse._id,
@@ -799,6 +806,12 @@ if(productIndex > -1){
       //     // handle error
       //     console.log(error);
       //   });
+      })
+      .catch((error) => {
+        console.log(error);
+                 this.$router.push("/signup")
+
+      });
     },
   },
   mounted() {

@@ -8,8 +8,22 @@
 </template>
 
 <script>
-export default {
+import axiosJWT from "../store/axios"
 
+export default {
+beforeRouteEnter(to, from, next) {
+      axiosJWT.get(process.env.VUE_APP_API_URL + 'customer/get-me',{withCredentials:true})
+        .then((res) => {
+          console.log(res)
+        next();
+
+      }).catch((error) => {
+        console.log(error)
+        next({ path: '/signup' });
+
+
+})
+  },
 }
 </script>
 

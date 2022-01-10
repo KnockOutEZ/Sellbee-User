@@ -4,14 +4,14 @@
             <span class="text-2xl font-semibold font-poppins">Track your order here.</span>
 
             <div class="flex flex-col md:flex-row gap-10 mt-3">
-                <div class="flex flex-col flex-1 gap-2">
+                <!-- <div class="flex flex-col flex-1 gap-2">
                     <span class="text-sm font-normal font-lato">Email</span>
                     <input
                         type="text"
                         class="w-full border rounded-md outline-none"
                         style=" border-color: #D4D4D4; height: 57px "
                     />
-                </div>
+                </div> -->
 
                 <div class="flex flex-col flex-1 gap-2">
                     <span class="text-sm font-normal font-lato">Order ID</span>
@@ -155,7 +155,8 @@
                 </div>
 
                 <!-- {/* status */} -->
-                <div class="flex flex-col gap-4 mb-6">
+                 Payment Status: Pending
+                <!-- <div class="flex flex-col gap-4 mb-6">
                     <span class="font-semibold font-poppins" style=" font-size: 10px ">
                         Status
                     </span>
@@ -180,15 +181,29 @@
                             Cash On Delivery
                         </span>
                     </div>
-                </div>
+                </div> -->
             </div>
         </main>
     </div>
 </template>
 
 <script>
-export default {
+import axiosJWT from "../store/axios"
 
+export default {
+beforeRouteEnter(to, from, next) {
+      axiosJWT.get(process.env.VUE_APP_API_URL + 'customer/get-me',{withCredentials:true})
+        .then((res) => {
+          console.log(res)
+        next();
+
+      }).catch((error) => {
+        console.log(error)
+        next({ path: '/signup' });
+
+
+})
+  },
 }
 </script>
 

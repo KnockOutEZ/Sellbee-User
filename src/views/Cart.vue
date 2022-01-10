@@ -159,6 +159,8 @@
 <script>
 import CartProduct from '../components/CartProduct.vue'
 import axios from 'axios';
+import axiosJWT from "../store/axios"
+
 export default {
 components:{
     CartProduct
@@ -174,7 +176,8 @@ methods:{
         this.$router.push("/checkout")
          axios
         .post(
-          process.env.VUE_APP_API_URL + "checkout",
+          process.env.VUE_APP_API_URL + "order",
+          { products:this.$store.state.cartProducts},
           { withCredentials: true }
         )
         .then((response) => {
@@ -206,7 +209,20 @@ console.log(this.carts)
       //     // handle error
       //     console.log(error);
       //   });
-    }
+    },
+      beforeRouteEnter(to, from, next) {
+      axiosJWT.get(process.env.VUE_APP_API_URL + 'customer/get-me',{withCredentials:true})
+        .then((res) => {
+          console.log(res)
+        next();
+
+      }).catch((error) => {
+        console.log(error)
+        next({ path: '/signup' });
+
+
+})
+  },
 }
 </script>
 
