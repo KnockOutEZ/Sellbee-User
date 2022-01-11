@@ -64,7 +64,7 @@
 
       <div class="flex items-center justify-between px-10 py-5 space-x-9">
         <div class="cursor-pointer">
-          <router-link to="/">
+          <router-link to="/home">
             <img src="../../src/assets/logo.svg" alt="logo" />
           </router-link>
         </div>
@@ -410,7 +410,7 @@
       <section>
         <div class="flex items-center justify-between px-5 py-5 space-x-9">
           <div class="cursor-pointer">
-            <router-link to="/">
+            <router-link to="/home">
               <img src="../../src/assets/logo.svg" alt="logo" />
             </router-link>
           </div>
@@ -733,7 +733,7 @@ export default {
       navOpen: false,
       category: false,
       categories: [
-        { title: "All Categories", link: "all-categories" },
+        { title: "All Products", link: "all-products" },
         { title: "Accessories", link: "accessories" },
         { title: "Smartphone", link: "smartphone" },
         { title: "Computer", link: "computer" },

@@ -11,8 +11,11 @@ import SignIn from '../views/SignIn.vue'
 import SignUp from '../views/SignUp.vue'
 
 const routes = [
+  { path: '/',
+    redirect: '/categories/All Products',
+  },
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
     component: Home
   },

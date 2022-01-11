@@ -5,16 +5,17 @@
         class="flex flex-col md:flex-row justify-between mx-10 mb-24 md:mx-p-w"
       >
         <div class="flex flex-col gap-12 w-full md:w-60">
+          <!-- rounded-2xl  border-->
           <div
-            class="flex flex-col py-6 overflow-auto border gap-7 rounded-2xl"
+            class="flex flex-col py-6 overflow-auto  gap-7 "
             style="height: 242px; border-color: #c4c4c4"
           >
-            <span class="px-5 text-sm font-semibold font-poppins">
+            <!-- <span class="px-5 text-sm font-semibold font-poppins">
               Show all categories
-            </span>
+            </span> -->
 
             <div class="flex flex-col gap-3 px-7">
-              <div v-for="category in categories" :key="category.name">
+              <!-- <div v-for="category in categories" :key="category.name">
                 <button
                   @click="subCat = !subCat"
                   type="button"
@@ -34,11 +35,7 @@
                     style="font-size: 12px"
                     class="align-text-bottom fas fa-angle-up"
                   ></i>
-                  <!-- {openCategory && openCategoryIndex === index ? (
-                                                <ExpandLess sx={{ font-size: 12 }} />
-                                            ) : (
-                                                <ExpandMore sx={{ font-size: 12 }} />
-                                            )} -->
+                  
                 </button>
                 <div v-if="subCat">
                   <div class="flex flex-col gap-1 mt-2 ml-5">
@@ -52,7 +49,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -63,7 +60,7 @@
 
             <div class="flex flex-col gap-2">
               <span
-                class="font-semibold tracking-wide font-lato"
+                class="font-semibold tracking-wide font-lato mb-5"
                 style="font-size: 10; color: #575757"
               >
                 Price range
@@ -75,13 +72,13 @@
             <div class="flex flex-col gap-4">
               <div class="example">
                 <Slider
-                :max = 1000
+                  :max="1000"
                   class=""
                   v-model="example2.value"
                   v-bind="example2"
                 ></Slider>
 
-                <button
+                <!-- <button
                   id="dropdownButton"
                   @click="dropdown = !dropdown"
                   class="
@@ -120,7 +117,7 @@
                       d="M19 9l-7 7-7-7"
                     ></path>
                   </svg>
-                </button>
+                </button> -->
 
                 <div
                   v-if="dropdown"
@@ -204,7 +201,7 @@
                   </ul>
                 </div>
 
-                <button
+                <!-- <button
                   id="dropdownButton"
                   @click="dropdown = !dropdown"
                   class="
@@ -243,7 +240,7 @@
                       d="M19 9l-7 7-7-7"
                     ></path>
                   </svg>
-                </button>
+                </button> -->
 
                 <div
                   v-if="dropdown"
@@ -410,7 +407,7 @@
                 </button>
               </div> -->
 
-              <!-- <div class="grid grid-cols-2 gap-2 pr-12 mt-6 mb-3">
+            <!-- <div class="grid grid-cols-2 gap-2 pr-12 mt-6 mb-3">
                 <span
                   v-for="(color, index) in colors"
                   :key="index"
@@ -487,7 +484,7 @@
           <div v-if="renderComponent">
             <div class="flex items-center justify-between mb-7">
               <span class="text-2xl font-semibold tracking-wide font-poppins">
-                 Categories
+                Products
               </span>
               <div class="flex items-center gap-3">
                 <svg
@@ -534,7 +531,7 @@
               </div>
             </div>
 
-            <div class="md:grid grid-cols-4 gap-4 px-p-w">
+            <div class="md:grid grid-cols-4 gap-4">
               <Product
                 v-for="product in products"
                 :key="product.id"
@@ -542,7 +539,7 @@
                 :regularPrice="product.regularPrice"
                 :salesPrice="product.salesPrice"
                 :image="product.image"
-                :productId = "product._id"
+                :productId="product._id"
               />
             </div>
 
@@ -660,7 +657,7 @@ export default {
     Product,
   },
   created() {
-    this.products = this.$store.state.products.data
+    this.products = this.$store.state.products.data;
   },
   methods: {
     forceRerender() {

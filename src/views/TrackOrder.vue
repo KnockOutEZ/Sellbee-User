@@ -1,7 +1,7 @@
 <template>
   <div>
         <main class="flex flex-col my-12 gap-7 mx-5 md:mx-p-w">
-            <span class="text-2xl font-semibold font-poppins">Track your order here.</span>
+            <!-- <span class="text-2xl font-semibold font-poppins">Track your order here.</span> -->
 
             <div class="flex flex-col md:flex-row gap-10 mt-3">
                 <!-- <div class="flex flex-col flex-1 gap-2">
@@ -13,23 +13,23 @@
                     />
                 </div> -->
 
-                <div class="flex flex-col flex-1 gap-2">
+                <!-- <div class="flex flex-col flex-1 gap-2">
                     <span class="text-sm font-normal font-lato">Order ID</span>
                     <input
                         type="text"
                         class="w-full border rounded-md outline-none"
                         style=" border-color: #D4D4D4; height: 57px "
                     />
-                </div>
+                </div> -->
             </div>
 
-            <button
+            <!-- <button
                 type="button"
                 class="flex items-center self-end justify-center w-full md:w-auto md:px-20 py-3 font-bold tracking-wide uppercase rounded-md cursor-pointer bg-bg-primary font-lato"
                 style=" font-size: 10px; color: #FBFBFB "
             >
                 track your order
-            </button>
+            </button> -->
 
             <div
                 class="flex flex-col md:flex-row p-5 mt-2 border rounded-md md:gap-60"
