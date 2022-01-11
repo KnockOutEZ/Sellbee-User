@@ -44,7 +44,7 @@
                         Your Orders
                     </div>
 
-                    <div
+                    <div v-for="(product,index) in products" :key="index"
                         class="flex flex-col gap-4 pb-5 mb-5 border-b"
                         style=" border-color: #F3F3F3 "
                     >
@@ -53,40 +53,20 @@
                                 class="font-semibold font-lato"
                                 style=" color: #1D1D1D; font-size: 10px "
                             >
-                                1x
+                                {{product.products[0].quantity}}x
                             </span>
                             <span
                                 class="ml-5 font-normal font-lato"
-                                style=" color: #8D8D8D; font-size: 9px; max-width: 132px "
+                                style=" color: #8D8D8D; font-size: 9px; min-width: 132px "
                             >
-                                LED Monitor With High Quality In The World
+                                 {{product.products[0].product.name}}
                             </span>
                             <span
                                 class="flex-1 font-semibold text-right font-lato "
                                 style=" color: #1D1D1D; font-size: 10px "
                             >
-                                976.33
-                            </span>
-                        </div>
+                                                            {{(product.products[0].product.salesPrice) ? product.products[0].product.salesPrice :product.products[0].product.regularPrice}}
 
-                        <div class="flex">
-                            <span
-                                class="font-semibold font-lato"
-                                style=" color: #1D1D1D; font-size: 10px "
-                            >
-                                1x
-                            </span>
-                            <span
-                                class="ml-5 font-normal font-lato"
-                                style=" color: #8D8D8D; font-size: 9px; max-width: 132px "
-                            >
-                                LED Monitor With High Quality In The World
-                            </span>
-                            <span
-                                class="flex-1 font-semibold text-right font-lato "
-                                style="color: #1D1D1D; font-size: 10px "
-                            >
-                                976.33
                             </span>
                         </div>
                     </div>
@@ -106,7 +86,7 @@
                                 class="font-semibold font-lato"
                                 style=" font-size: 10px; color: #1D1D1D "
                             >
-                                1,952.66
+                                0
                             </span>
                         </div>
 
@@ -136,7 +116,7 @@
                                 class="font-semibold font-lato"
                                 style=" font-size: 10px; color: #1D1D1D "
                             >
-                                4.00
+                                0
                             </span>
                         </div>
                     </div>
@@ -149,7 +129,7 @@
                             Order Total
                         </span>
                         <span class="text-sm font-semibold font-poppins text-bg-primary">
-                            1956.66
+                            0
                         </span>
                     </div>
                 </div>
@@ -189,8 +169,14 @@
 
 <script>
 import axiosJWT from "../store/axios"
+import axios from 'axios';
 
 export default {
+    data(){
+        return{
+            products:[]
+        }
+    },
 beforeRouteEnter(to, from, next) {
       axiosJWT.get(process.env.VUE_APP_API_URL + 'customer/get-me',{withCredentials:true})
         .then((res) => {
@@ -200,10 +186,23 @@ beforeRouteEnter(to, from, next) {
       }).catch((error) => {
         console.log(error)
         next({ path: '/signup' });
-
-
 })
   },
+  created(){
+      axios
+        .get(
+          process.env.VUE_APP_API_URL + "order",
+          { withCredentials: true }
+        )
+        .then((response) => {
+          console.log(response.data)
+          this.products = response.data.data
+        })
+        .catch((error) => {
+          // handle error
+          console.log(error);
+        });
+  }
 }
 </script>
 

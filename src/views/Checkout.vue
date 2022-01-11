@@ -8,7 +8,7 @@
 
                 <!-- {/* input row */} -->
                 <div class="flex flex-col md:flex-row gap-7">
-                    <div class="flex flex-col flex-1 gap-2">
+                    <!-- <div class="flex flex-col flex-1 gap-2">
                         <span class="font-normal font-lato" style=" font-size: 9px ">
                             First Name
                         </span>
@@ -17,9 +17,9 @@
                             class="w-full border rounded-md outline-none h-9"
                             style=" border-color: #D4D4D4 "
                         />
-                    </div>
+                    </div> -->
 
-                    <div class="flex flex-col flex-1 gap-2">
+                    <!-- <div class="flex flex-col flex-1 gap-2">
                         <span class="font-normal font-lato" style=" font-size: 9px ">
                             Last Name
                         </span>
@@ -28,7 +28,7 @@
                             class="w-full border rounded-md outline-none h-9"
                             style=" border-color: #D4D4D4 "
                         />
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -40,7 +40,7 @@
                     My Orders
                 </div>
 
-                <div
+                <div v-for="(product,index) in products" :key="index"
                     class="flex flex-col gap-4 pb-5 mb-5 border-b"
                     style=" border-color: #F3F3F3 "
                 >
@@ -49,23 +49,23 @@
                             class="font-semibold font-lato"
                             style=" color: #1D1D1D; font-size: 10px "
                         >
-                            1x
+                            {{product.products[0].quantity}}x
                         </span>
                         <span
                             class="ml-5 font-normal font-lato"
                             style=" color: #8D8D8D; font-size: 9px; max-width: 132px "
                         >
-                            LED Monitor With High Quality In The World
+                            {{product.products[0].product.name}}
                         </span>
                         <span
                             class="flex-1 font-semibold text-right font-lato "
                             style=" color: #1D1D1D; font-size: 10px "
                         >
-                            976.33
+                            {{(product.products[0].product.salesPrice) ? product.products[0].product.salesPrice :product.products[0].product.regularPrice}}
                         </span>
                     </div>
 
-                    <div class="flex">
+                    <!-- <div class="flex">
                         <span
                             class="font-semibold font-lato"
                             style=" color: #1D1D1D; font-size: 10px "
@@ -84,7 +84,7 @@
                         >
                             976.33
                         </span>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div
@@ -102,7 +102,7 @@
                             class="font-semibold font-lato"
                             style=" font-size: 10px; color: #1D1D1D "
                         >
-                            1,952.66
+                            <!-- 1,952.66 -->0
                         </span>
                     </div>
 
@@ -132,7 +132,7 @@
                             class="font-semibold font-lato"
                             style=" font-size: 10px; color: #1D1D1D "
                         >
-                            4.00
+                            <!-- 4.00 -->0
                         </span>
                     </div>
                 </div>
@@ -148,7 +148,7 @@
                         Order Total
                     </span>
                     <span class="text-sm font-semibold font-poppins text-bg-primary">
-                        1956.66
+                        <!-- 1956.66 -->0
                     </span>
                 </div>
 
@@ -179,7 +179,7 @@
                     </div>
                 </div>
 
-                <button
+                <button @click="$router.push('/orderconfirm')"
                     type="button"
                     class="px-20 py-3 font-bold uppercase rounded-md bg-bg-primary font-lato"
                     style=" font-size: 10px; color: #FBFBFB"
@@ -204,6 +204,11 @@ import axiosJWT from "../store/axios"
 import axios from 'axios';
 
 export default {
+    data(){
+        return{
+            products:[]
+        }
+    },
 beforeRouteEnter(to, from, next) {
       axiosJWT.get(process.env.VUE_APP_API_URL + 'customer/get-me',{withCredentials:true})
         .then((res) => {
@@ -215,7 +220,7 @@ beforeRouteEnter(to, from, next) {
         next({ path: '/signup' });
 })
   },
-  mounted(){
+  created(){
       axios
         .get(
           process.env.VUE_APP_API_URL + "order",
@@ -223,6 +228,7 @@ beforeRouteEnter(to, from, next) {
         )
         .then((response) => {
           console.log(response)
+          this.products = response.data.data
         })
         .catch((error) => {
           // handle error
