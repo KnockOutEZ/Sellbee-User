@@ -52,7 +52,7 @@
               class="flex items-center gap-10 px-3 border rounded-md h-9"
               style="border-color: #d8d8d8"
             >
-              <button class="cursor-pointer" @click="quantityProduct--">
+              <button class="cursor-pointer" @click="quantityProductDec">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="9.5"
@@ -74,7 +74,7 @@
               >
                 {{quantityProduct}}
               </span>
-              <button class="cursor-pointer" @click="quantityProduct++">
+              <button class="cursor-pointer" @click="quantityProductInc">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="8.784"
@@ -228,6 +228,16 @@ export default {
           // handle error
           console.log(error);
         });
+      },
+      methods:{
+        quantityProductDec(){
+          this.quantityProduct--
+        this.$store.state.cartProducts[this.index].quantity = this.quantityProduct;
+        },
+        quantityProductInc(){
+          this.quantityProduct++
+        this.$store.state.cartProducts[this.index].quantity = this.quantityProduct;
+        }
       }
 
     // mounted(){
