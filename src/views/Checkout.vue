@@ -201,7 +201,7 @@
 
 <script>
 import axiosJWT from "../store/axios"
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
     data(){
@@ -221,7 +221,7 @@ beforeRouteEnter(to, from, next) {
 })
   },
   created(){
-      axios
+      axiosJWT
         .get(
           process.env.VUE_APP_API_URL + "order",
           { withCredentials: true }

@@ -769,7 +769,7 @@ export default {
     logOut() {
       axios
         .delete(process.env.VUE_APP_API_URL + "customer/logout", {
-          withCredentials: true,
+          data:{refreshToken:localStorage.getItem("refresh-token")}
         })
         .then((res) => {
           console.log(res);

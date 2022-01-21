@@ -158,7 +158,7 @@
 
 <script>
 import CartProduct from '../components/CartProduct.vue'
-import axios from 'axios';
+// import axios from 'axios';
 import axiosJWT from "../store/axios"
 
 export default {
@@ -174,7 +174,7 @@ data(){
 methods:{
     checkOut(){
         this.$router.push("/checkout")
-         axios
+         axiosJWT
         .post(
           process.env.VUE_APP_API_URL + "order",
           { products:this.$store.state.cartProducts},

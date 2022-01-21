@@ -66,6 +66,8 @@ methods:{
           //Perform Success Action
           console.log(res);
           this.$store.commit("toggleAuthenticated");
+           localStorage.setItem("access-token", res.data.accessToken)
+      localStorage.setItem("refresh-token", res.data.refreshToken)
           console.log(this.$store.state.isAuthenticated)
           this.$router.go({ path: "/" });
           console.log(res.data);
